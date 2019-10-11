@@ -53,3 +53,30 @@ function modeFPS(){
 		instructions.innerHTML = 'Your browser doesn\'t seem to support Pointer Lock API';
 	}
 }
+
+
+function add_crosshair(){
+	var material = new THREE.LineBasicMaterial({ color: 0xAAFFAA });
+
+	// crosshair size
+	var x = 0.01, y = 0.01;
+
+	var geometry = new THREE.Geometry();
+
+	// crosshair
+	geometry.vertices.push(new THREE.Vector3(0, y, 0));
+	geometry.vertices.push(new THREE.Vector3(0, -y, 0));
+	geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+	geometry.vertices.push(new THREE.Vector3(x, 0, 0));
+	geometry.vertices.push(new THREE.Vector3(-x, 0, 0));
+
+	var crosshair = new THREE.Line( geometry, material );
+
+	// place it in the center
+	crosshair.position.x = 0
+	crosshair.position.y = 0
+
+	crosshair.position.z = -0.3;
+
+	camera.add( crosshair );
+}

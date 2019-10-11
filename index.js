@@ -1,95 +1,96 @@
-		var temps = 0.0 ;
-		var dt ;
-		var chrono = null ;
-		var annuaire = null ;
-		var scene = null;
-		var renderer = null;
-		var camera = null;
+var temps = 0.0 ;
+var dt ;
+var chrono = null ;
+var annuaire = null ;
+var scene = null;
+var renderer = null;
+var camera = null;
 
-		var listener = null ;
-		var sound  = null ;
-		var sound1 = null ;
+var listener = null ;
+var sound  = null ;
+var sound1 = null ;
 
-		var controls = null ;
-		var windowHalfX = window.innerWidth  / 2.0 ;
-		var windowHalfY = window.innerHeight / 2.0 ;
+var controls = null ;
+var windowHalfX = window.innerWidth  / 2.0 ;
+var windowHalfY = window.innerHeight / 2.0 ;
 
-		var pointeur ;
-		var isPointerLocked = false
-		var mouseX = mouseY = 0.0 ;
-		var ray = null
-		var data ;
+var pointeur ;
+var isPointerLocked = false
+var mouseX = mouseY = 0.0 ;
+var ray = null
+var data ;
 
-		function init(){
-			modeFPS()
+function init(){
+	modeFPS()
 
-			chrono = new THREE.Clock() ;
+	chrono = new THREE.Clock() ;
 
-			annuaire = {} ;
+	annuaire = {} ;
 
-			renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			document.body.appendChild(renderer.domElement);
+	renderer = new THREE.WebGLRenderer({antialias:true,alpha:true});
+	renderer.setSize(window.innerWidth, window.innerHeight);
+	document.body.appendChild(renderer.domElement);
 
-			scene = new THREE.Scene() ;
-			enregistrerDansAnnuaire("scene",scene) ;
+	scene = new THREE.Scene() ;
+	enregistrerDansAnnuaire("scene",scene) ;
 
-			camera = new THREE.PerspectiveCamera(70.0, window.innerWidth/window.innerHeight, 0.1, 100.0) ;
-			camera.position.set(0,0,0) ;
-			camera.lookAt(new THREE.Vector3(0.0,0,0.0)) ;
-
-
-			listener = new THREE.AudioListener() ;
-			camera.add(listener) ;
+	camera = new THREE.PerspectiveCamera(70.0, window.innerWidth/window.innerHeight, 0.1, 100.0) ;
+	camera.position.set(0,0,0) ;
+	camera.lookAt(new THREE.Vector3(0.0,0,0.0)) ;
 
 
-			// ray = new THREE.Ray();
-			// ray.direction.set( 0, -1, 0 );
+	listener = new THREE.AudioListener() ;
+	camera.add(listener) ;
+
+	add_crosshair();
+	// ray = new THREE.Ray();
+	// ray.direction.set( 0, -1, 0 );
 
 
-			window.addEventListener('resize', function(){
-				windowHalfX = window.innerWidth  / 2.0 ;
-				windowHalfY = window.innerHeight / 2.0 ;
-				camera.aspect = window.innerWidth / window.innerHeight ;
-				camera.updateProjectionMatrix() ;
-				renderer.setSize(window.innerWidth , window.innerHeight) ;
+	window.addEventListener('resize', function(){
+		windowHalfX = window.innerWidth  / 2.0 ;
+		windowHalfY = window.innerHeight / 2.0 ;
+		camera.aspect = window.innerWidth / window.innerHeight ;
+		camera.updateProjectionMatrix() ;
+		renderer.setSize(window.innerWidth , window.innerHeight) ;
 
-			}) ;
-
-
-			controls = new PointerLockControls(camera);
-			scene.add( controls.getObject() );
-
-			chrono.start() ;
-
-		} ;
-
-		function enregistrerDansAnnuaire(nom,objet){
-			annuaire[nom] = objet ;
-		}
-
-		function chercherDansAnnuaire(nom,defaut){
-			return (annuaire[nom] || defaut) ;
-		}
+	}) ;
 
 
-		function creerScene(){
+	controls = new PointerLockControls(camera);
+	scene.add( controls.getObject() );
+
+	chrono.start() ;
+
+} ;
+
+function enregistrerDansAnnuaire(nom,objet){
+	annuaire[nom] = objet ;
+}
+
+function chercherDansAnnuaire(nom,defaut){
+	return (annuaire[nom] || defaut) ;
+}
 
 
-			//scene.add(creerSoleil()) ;
-			pointeur = creerSphere("pointeur",0.05,16,materiauRouge) ;
-			scene.add(pointeur) ;
-
-			// parser() ;
-			chargerDocument() ;
-		}
+function creerScene(){
 
 
-		function animate(){
+	//scene.add(creerSoleil()) ;
+	pointeur = creerSphere("pointeur",0.05,16,materiauRouge) ;
+	scene.add(pointeur) ;
 
-			dt = chrono.getDelta() ;
-			temps += dt ;
-			requestAnimationFrame(animate) ;
-			controls.update(dt) ;
-			renderer.render(scene, camera) ;
-		}
+
+	// parser() ;
+	chargerDocument() ;
+}
+
+
+function animate(){
+
+	dt = chrono.getDelta() ;
+	temps += dt ;
+	requestAnimationFrame(animate) ;
+	controls.update(dt) ;
+	renderer.render(scene, camera) ;
+}
