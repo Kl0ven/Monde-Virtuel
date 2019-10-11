@@ -3,19 +3,33 @@
 <head>
 	<meta charset="utf-8">
 	<title>Activités three.js</title>
-		<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
 	<script src="lib/three.min.js"></script>
+	<script src="lib/PointerLockControls.js">
+
+	</script>
 	<script src="js/base.js"></script>
 	<script src="js/parser.js"></script>
-	<script src="js/controleur.js"></script>
+	<!-- <script src="js/controleur.js"></script> -->
+	<script src="js/utils.js"></script>
 	<script src="index.js"></script>
 	<script>
-
-		init() ; 
-		creerScene() ; 
-		animate() ; 
+	document.addEventListener("DOMContentLoaded", function(event) {
+		init() ;
+		creerScene() ;
+		animate() ;
+	});
 	</script>
-</html>
+
+	<div id="blocker">
+		<div id="instructions">
+			<span style="font-size:40px">Click to play</span>
+			<br />
+			(W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+		</div>
+
+	</div>
+	</html>
