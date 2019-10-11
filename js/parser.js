@@ -12,6 +12,7 @@ function colorier(coul){
 
 function chargerDocument(){
 	var oReq = new XMLHttpRequest() ; 
+	oReq.overrideMimeType("application/json");
 	oReq.onload = parser ; 
 	oReq.open("get","scene.json",true) ; 
 	oReq.send() ; 
