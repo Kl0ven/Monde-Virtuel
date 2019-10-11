@@ -3,7 +3,7 @@
 			
 			
 			{"type":"soleil" , "nom":"soleil"    , "params":{}},
-			{"type":"ampoule", "nom":"ampoule01" , "params":{"couleur":"rouge","intensite":2.0,"portee":5.0,"attenuation":2.0}},
+			{"type":"ampoule", "nom":"ampoule01" , "params":{"couleur":"blanc","intensite":5.0,"portee":6.0,"attenuation":1.0}},
 
 			{"type":"standard", "nom":"materiauBleu","params":{"couleur":"bleu"}},
 			{"type":"standard", "nom":"materiauBlanc","params":{"couleur":"blanc"}},
@@ -13,20 +13,21 @@
                                                   "couleur":"gris","nx":1,"ny":1}},
 			{"type":"standardTexture", "nom":"textureSol",
                                                   "params":{"image":"assets/textures/sols_plafonds/parquet2.jpg",
-												  "couleur":"gris","nx":50,"ny":50}
+												  "couleur":"gris","nx":5,"ny":5}
 			},
 			{"type":"standardTexture", "nom":"textureBrique",
 				"params":{"image":"assets/murs/bricks1.jpg",
-				"couleur":"gris","nx":10,"ny":10}
+				"couleur":"gris","nx":5,"ny":1}
 			},
 			{"type":"standardTexture", "nom":"textureJapan",
 				"params":{"image":"assets/murs/japan010.jpg",
-				"couleur":"gris","nx":50,"ny":50}
+				"couleur":"gris","nx":4,"ny":1}
 			},
 			{"type":"standardTexture", "nom":"textureCouleur",
 				"params":{"image":"assets/murs/mur_couleur.jpg",
 				"couleur":"gris","nx":50,"ny":50}
 			},
+			
 							
 
 			{"type":"groupe",  "nom":"gr01","params":{}},
@@ -63,93 +64,93 @@
 													 "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison01",
 											"params":{"largeur":14.0, 
-													  "hauteur":4.0,
+													  "hauteur":6.0,
 										              "epaisseur":0.1,
 													  "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison02",
 											"params":{"largeur":14.0, 
-													  "hauteur":4.0,
+													  "hauteur":6.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison03",
 											"params":{"largeur":28.0, 
-													  "hauteur":4.0,
+													  "hauteur":6.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison04",
 											"params":{"largeur":28.0, 
-													  "hauteur":4.0,
+													  "hauteur":6.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison05",
 				"params":{"largeur":40.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison06",
 				"params":{"largeur":40.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison07",
 				"params":{"largeur":48.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
-						  "materiau":"mur_couleur"}
+						  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison08",
 				"params":{"largeur":48.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison09",
 				"params":{"largeur":14.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison10",
 				"params":{"largeur":14.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 			},
 
 			{"type":"cloison", "nom":"mur01",
-				"params":{"largeur":40.0, 
-						  "hauteur":4.0,
+				"params":{"largeur":48.0, 
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						  
 			},
 			{"type":"cloison", "nom":"mur02",
-				"params":{"largeur":40.0, 
-						  "hauteur":4.0,
+				"params":{"largeur":48.0, 
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						  
 			},
 			{"type":"cloison", "nom":"mur03",
 				"params":{"largeur":100.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						  
 			},
 			{"type":"cloison", "nom":"mur04",
 				"params":{"largeur":100.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						  
 			},
 			{"type":"cloison", "nom":"mur05",
 				"params":{"largeur":100.0, 
-						  "hauteur":4.0,
+						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						
@@ -160,7 +161,7 @@
 
 		    ],
 	"actions" : [
-			{"fonc":"placerXYZ", "objet":"ampoule01", "params":{"x":1, "y":2.5,"z":3}},
+			{"fonc":"placerXYZ", "objet":"ampoule01", "params":{"x":0, "y":5.9,"z":5}}, 
 			{"fonc":"orienterY", "objet":"gr01", "params":{"angle":0.785398163}},
 			{"fonc":"placerXYZ", "objet":"gr01", "params":{"x":-2, "y":-0.5,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sol", "params":{"x":0, "y":-0.01,"z":0}},
@@ -178,22 +179,22 @@
 			{"fonc":"orienterY", "objet":"cloison05", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"cloison06", "params":{"x":-20, "y":0.0,"z":30.0}},
 			{"fonc":"orienterY", "objet":"cloison06", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"cloison07", "params":{"x":10, "y":0.0,"z":-22.0}},
+			{"fonc":"placerXYZ", "objet":"cloison07", "params":{"x":10, "y":0.0,"z":-26.0}},
 			{"fonc":"orienterY", "objet":"cloison07", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"cloison08", "params":{"x":10, "y":0.0,"z":22.0}},
+			{"fonc":"placerXYZ", "objet":"cloison08", "params":{"x":10, "y":0.0,"z":26.0}},
 			{"fonc":"orienterY", "objet":"cloison08", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"cloison09", "params":{"x":-2, "y":0.0,"z":-10.0}},
-			{"fonc":"placerXYZ", "objet":"cloison10", "params":{"x":2, "y":0.0,"z":-10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison09", "params":{"x":3, "y":0.0,"z":-10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison10", "params":{"x":3, "y":0.0,"z":10.0}},
 			{"fonc":"orienterY", "objet":"mur01", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"mur01", "params":{"x":-50, "y":0.0,"z":-30.0}},
+			{"fonc":"placerXYZ", "objet":"mur01", "params":{"x":-50, "y":0.0,"z":-26.0}},
 			{"fonc":"orienterY", "objet":"mur02", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"mur02", "params":{"x":-50, "y":0.0,"z":30.0}},
+			{"fonc":"placerXYZ", "objet":"mur02", "params":{"x":-50, "y":0.0,"z":26.0}},
 			{"fonc":"orienterY", "objet":"mur03", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"mur03", "params":{"x":50, "y":0.0,"z":0.0}},
 			{"fonc":"placerXYZ", "objet":"mur04", "params":{"x":0.0, "y":0.0,"z":-50.0}},
 			{"fonc":"placerXYZ", "objet":"mur05", "params":{"x":0.0, "y":0.0,"z":50.0}},
 			
-			{"fonc":"placerXYZ", "objet":"etage", "params":{"x":0, "y":4.0,"z":0.0}}
+			{"fonc":"placerXYZ", "objet":"etage", "params":{"x":0, "y":6.0,"z":0.0}}
 		    ],
 	"relations" : [
 			{"rel":"parentDe","sujet":"scene","objet":"soleil"},

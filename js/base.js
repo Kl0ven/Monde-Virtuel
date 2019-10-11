@@ -97,6 +97,11 @@ function creerSourcePonctuelle(couleur, intensite, portee, attenuation){
 	return light ; 
 }
 
+function creerSourceAmbient(couleur, intensite){
+	var light = new THREE.AmbientLight(couleur, intensite);
+	return light ;
+}
+
 function creerSoleil(){
 	var h = new THREE.HemisphereLight(0xffffff,0xffffff,1) ; 
 	return h ; 
