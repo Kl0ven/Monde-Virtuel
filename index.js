@@ -82,7 +82,6 @@
 
 			// parser() ;
 			chargerDocument() ;
-			console.log("Fin de création de la scène") ;
 		}
 
 

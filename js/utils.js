@@ -1,7 +1,6 @@
 function modeFPS(){
 	var blocker = document.getElementById( 'blocker' );
 	var instructions = document.getElementById( 'instructions' );
-	console.log(instructions);
 	var havePointerLock = 'pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document;
 	if ( havePointerLock ) {
 		var element = document.body;
@@ -11,7 +10,6 @@ function modeFPS(){
 				controls.enabled = true;
 				blocker.style.display = 'none';
 				isPointerLocked = true
-				console.log("controls enabled");
 			} else {
 				controls.enabled = false;
 				blocker.style.display = '-webkit-box';
@@ -19,7 +17,6 @@ function modeFPS(){
 				blocker.style.display = 'box';
 				instructions.style.display = '';
 				isPointerLocked = false
-				console.log("controls disabled");
 			}
 		};
 		var pointerlockerror = function ( event ) {

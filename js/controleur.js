@@ -102,7 +102,6 @@ function keyUp(event){
 
 function keyDown(event){
 	//mouseClicked=false;
-	console.log("KEYDOWN") ;
 	switch(event.keyCode){
 		case 33 : // HAUT
 			controls.plusHaut = true ;
