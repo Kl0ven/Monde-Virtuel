@@ -1,4 +1,3 @@
-var temps = 0.0;
 var dt;
 var chrono = null;
 var annuaire = null;
@@ -19,6 +18,10 @@ var isPointerLocked = false
 var mouseX = mouseY = 0.0;
 var ray = null
 var data;
+
+var lastObjectSeenID;
+var lastObjectSeenTime;
+var focusTimeThreshold = 2
 
 function init(){
 	modeFPS()
@@ -84,8 +87,28 @@ function creerScene(){
 function animate(){
 
 	dt = chrono.getDelta();
-	temps += dt;
 	requestAnimationFrame(animate);
+	lastSeenObject(dt)
 	controls.update(dt);
 	renderer.render(scene, camera);
+}
+
+
+function lastSeenObject(dt){
+	var o = controls.raycaster()
+	if (o ===null) return;
+	if (o.object.id == lastObjectSeenID){
+		lastObjectSeenTime += dt;
+	} else {
+		lastObjectSeenID = o.object.id;
+		lastObjectSeenTime = 0
+		info.style.opacity = 0;
+	}
+
+	if (lastObjectSeenTime > focusTimeThreshold && o.object.userData.hasOwnProperty('comment')){
+		let info = document.getElementById('info')
+		info.innerText = o.object.userData.comment;
+		info.style.opacity = 1;
+	}
+
 }

@@ -26,6 +26,15 @@ var PointerLockControls = function (camera) {
 	var velocity = new THREE.Vector3();
 
 	var coef = 5;
+
+	var mouse = new THREE.Vector2(0, 0);
+	var mouseClicked = false;
+	var world = null;
+	var origin = new THREE.Vector3();
+	var ext = new THREE.Vector3();
+	var raycaster = new THREE.Raycaster();
+
+
 	var onMouseMove = function (event) {
 		if (scope.enabled === false) return;
 		var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
@@ -37,28 +46,15 @@ var PointerLockControls = function (camera) {
 		pitchObject.rotation.x = Math.max(-PI_2, Math.min(PI_2, pitchObject.rotation.x));
 	};
 
-	var mouse = new THREE.Vector2(0, 0);
-	var raycaster = new THREE.Raycaster();
-	var mouseClicked = false;
-	var world = null;
-	var origin = new THREE.Vector3();
-	var ext = new THREE.Vector3();
-	var objs = [];
 	function mouseDown (event) {
 		if (scope.enabled === false) return;
 		event.preventDefault();
-		raycaster.setFromCamera(mouse, camera);
-		var children = scene.children;
-		objs = [];
-		for (var i in children) {
-			if (children[i].name === 'PointerLockControls') continue;
-			objs.push(children[i]);
-		}
-		var intersects = raycaster.intersectObjects(objs, true);
-		if (intersects.length > 0) {
-			pointeur.position.set(intersects[0].point.x, intersects[0].point.y, +intersects[0].point.z);
+		let obj = scope.raycaster();
+		console.log(obj);
+		if (obj !== null) {
+			pointeur.position.set(obj.point.x, obj.point.y, +obj.point.z);
 			mouseClicked = true;
-			world = intersects[0].object.matrixWorld;
+			world = obj.object.matrixWorld;
 			origin = new THREE.Vector3(0, 0, 0);
 			ext = new THREE.Vector3(0, 0, 2);
 			origin.applyMatrix4(world);
@@ -140,6 +136,21 @@ var PointerLockControls = function (camera) {
 		yawObject.rotation.y = Math.atan2(direction.x, direction.z) - Math.PI;
 	};
 
+	this.raycaster = function (){
+		var objs = [];
+		var ret = null;
+		raycaster.setFromCamera(mouse, camera);
+		var children = scene.children;
+		for (var i in children) {
+			if (children[i].name === 'PointerLockControls') continue;
+			objs.push(children[i]);
+		}
+		var result = raycaster.intersectObjects(objs, true);
+		if (result.length > 0) {
+			ret = result[0];
+		}
+		return ret;
+	}
 	this.update = function (delta) {
 		if (scope.enabled === false) return;
 

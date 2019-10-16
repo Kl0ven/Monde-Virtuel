@@ -18,6 +18,9 @@
 		init() ;
 		creerScene() ;
 		animate() ;
+		setTimeout(() =>{
+			document.getElementById('info').style.visibility = 'visible'
+		},1000)
 	});
 	</script>
 
@@ -27,6 +30,7 @@
 			<br />
 			(W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
 		</div>
-
 	</div>
+
+	<div id="info">Description</div>
 	</html>

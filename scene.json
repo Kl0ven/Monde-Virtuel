@@ -1,7 +1,7 @@
 {
 	"objets" : [
-			
-			
+
+
 			{"type":"soleil" , "nom":"soleil"    , "params":{}},
 			{"type":"ampoule", "nom":"ampoule01" , "params":{"couleur":"rouge","intensite":2.0,"portee":5.0,"attenuation":2.0}},
 
@@ -27,136 +27,136 @@
 				"params":{"image":"assets/murs/mur_couleur.jpg",
 				"couleur":"gris","nx":50,"ny":50}
 			},
-							
+
 
 			{"type":"groupe",  "nom":"gr01","params":{}},
-			{"type":"sphere",  "nom":"sph01",       
-                                           "params":{"rayon":0.5,"subdivisions":16,"materiau":"materiauBleu"}},
-			{"type":"sphere",  "nom":"sph02",       
+			{"type":"sphere",  "nom":"sph01",
+                                           "params":{"rayon":0.5,"subdivisions":16,"materiau":"materiauBleu", "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}},
+			{"type":"sphere",  "nom":"sph02",
                                            "params":{"rayon":0.5,"subdivisions":16,"materiau":"materiauBlanc"}},
-			{"type":"sphere",  "nom":"sph03",       
+			{"type":"sphere",  "nom":"sph03",
                                            "params":{"rayon":0.5,"subdivisions":16,"materiau":"textureDante"}},
-			{"type":"sol",     "nom":"sol",         
+			{"type":"sol",     "nom":"sol",
                                            "params":{"largeur":100.0,"profondeur":100.0,"materiau":"textureSol"}},
 
 			{"type":"poster", "nom":"poster01",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/trevarez/cuisine.jpg"}},
 			{"type":"poster", "nom":"poster02",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/trevarez/coffre-charbon.jpg"}},
 			{"type":"texte", "nom":"texte01",
-                                           "params":{"largeur":10.0, 
+                                           "params":{"largeur":10.0,
                                                      "hauteur":10.0,
                                                      "texte":"BONJOUR"}},
-	
+
 			{"type":"cloison", "nom":"etage",
 
-                                           "params":{"largeur":100.0, 
+                                           "params":{"largeur":100.0,
                                                      "hauteur":0.1,
                                                      "epaisseur":100.0,
 						     "nl":10, "ne":10, "nh":10,
 													 "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison01",
-											"params":{"largeur":14.0, 
+											"params":{"largeur":14.0,
 													  "hauteur":4.0,
 										              "epaisseur":0.1,
 													  "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison02",
-											"params":{"largeur":14.0, 
+											"params":{"largeur":14.0,
 													  "hauteur":4.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison03",
-											"params":{"largeur":28.0, 
+											"params":{"largeur":28.0,
 													  "hauteur":4.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureDante"}},
 			{"type":"cloison", "nom":"cloison04",
-											"params":{"largeur":28.0, 
+											"params":{"largeur":28.0,
 													  "hauteur":4.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison05",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison06",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison07",
-				"params":{"largeur":48.0, 
+				"params":{"largeur":48.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"mur_couleur"}
 			},
 			{"type":"cloison", "nom":"cloison08",
-				"params":{"largeur":48.0, 
+				"params":{"largeur":48.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison09",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 			},
 			{"type":"cloison", "nom":"cloison10",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 			},
 
 			{"type":"cloison", "nom":"mur01",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						  
+
 			},
 			{"type":"cloison", "nom":"mur02",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						  
+
 			},
 			{"type":"cloison", "nom":"mur03",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						  
+
 			},
 			{"type":"cloison", "nom":"mur04",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						  
+
 			},
 			{"type":"cloison", "nom":"mur05",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						
+
 			}
 
 
-			
+
 
 		    ],
 	"actions" : [
@@ -192,7 +192,7 @@
 			{"fonc":"placerXYZ", "objet":"mur03", "params":{"x":50, "y":0.0,"z":0.0}},
 			{"fonc":"placerXYZ", "objet":"mur04", "params":{"x":0.0, "y":0.0,"z":-50.0}},
 			{"fonc":"placerXYZ", "objet":"mur05", "params":{"x":0.0, "y":0.0,"z":50.0}},
-			
+
 			{"fonc":"placerXYZ", "objet":"etage", "params":{"x":0, "y":4.0,"z":0.0}}
 		    ],
 	"relations" : [

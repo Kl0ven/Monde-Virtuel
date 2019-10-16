@@ -33,26 +33,23 @@ function parser(){
 		_obj = objets[i] ;
 		var nom    = _obj.nom ;
 		var params = _obj.params ;
+		var createdObject;
 
 		if(_obj.type == "groupe" ){
-			var groupe        = creerGroupe(nom) ;
-			enregistrerDansAnnuaire(nom,groupe) ;
-
+			createdObject        = creerGroupe(nom) ;
 		} else
 		if(_obj.type == "sol" ){
 			var largeur    = params.largeur ;
 			var profondeur = params.profondeur ;
 			var materiau   = chercherDansAnnuaire(params.materiau) ;
-			var sol        = creerSol(nom,largeur,profondeur,materiau) ;
-			enregistrerDansAnnuaire(nom,sol) ;
+			createdObject       = creerSol(nom,largeur,profondeur,materiau) ;
 
 		} else
 		if(_obj.type == "sphere"){
 			var rayon    = params.rayon ;
 			var subdiv   = params.subdivisions ;
 			var materiau = chercherDansAnnuaire(params.materiau) ;
-			var sph   = creerSphere(nom,rayon,subdiv,materiau) ;
-			enregistrerDansAnnuaire(nom,sph) ;
+			createdObject   = creerSphere(nom,rayon,subdiv,materiau) ;
 		} else
 		if(_obj.type == "cloison"){
 			var largeur   = params.largeur ;
@@ -62,72 +59,66 @@ function parser(){
 			var ny	      = params.nh || 1 ;
 			var nz 	      = params.ne || 1 ;
 			var materiau  = chercherDansAnnuaire(params.materiau) || materiauBlanc ;
-			var cloison   = creerCloison(nom,largeur,hauteur,epaisseur, nx, ny, nz,materiau) ;
-			enregistrerDansAnnuaire(nom, cloison) ;
+			createdObject  = creerCloison(nom,largeur,hauteur,epaisseur, nx, ny, nz,materiau) ;
 		} else
 		if(_obj.type == "poster"){
 			var largeur = params.largeur ;
 			var hauteur = params.hauteur ;
 			var url     = params.url ;
-			var poster  = creerPoster(nom,largeur,hauteur,url) ;
-			enregistrerDansAnnuaire(nom, poster) ;
+			createdObject  = creerPoster(nom,largeur,hauteur,url) ;
 		} else
 		if(_obj.type == "texte"){
 			var largeur = params.largeur ;
 			var hauteur = params.hauteur ;
 			var desc    = params.texte ;
-			var texte   = creerText(desc,largeur,hauteur) ;
-			enregistrerDansAnnuaire(nom, texte) ;
+			createdObject   = creerText(desc,largeur,hauteur) ;
 		} else
 		if(_obj.type == "axes"){
             var longueur = params.longueur || 1 ;
-			var axes     = creerAxes(longueur) ;
-			enregistrerDansAnnuaire(nom, axes) ;
+			createdObject     = creerAxes(longueur) ;
 		} else
 		if(_obj.type == "wireframe"){
-			var materiau = creerWireframe(colorier(params.couleur)) ;
-			enregistrerDansAnnuaire(nom,materiau) ;
+			createdObject = creerWireframe(colorier(params.couleur)) ;
 		} else
 		if(_obj.type == "lambert"){
-			var materiau = creerLambert(colorier(params.couleur)) ;
-			enregistrerDansAnnuaire(nom,materiau) ;
+			createdObject = creerLambert(colorier(params.couleur)) ;
 		} else
 		if(_obj.type == "lambertTexture"){
 			var nx = params.nx || 1 ;
 			var ny = params.ny || 1 ;
-			var materiau = creerLambertTexture(params.image,colorier(params.couleur),nx, ny) ;
-			enregistrerDansAnnuaire(nom, materiau) ;
+			createdObject = creerLambertTexture(params.image,colorier(params.couleur),nx, ny) ;
 		} else
 		if(_obj.type == "standard"){
-			var materiau = creerStandard(colorier(params.couleur)) ;
-			enregistrerDansAnnuaire(nom,materiau) ;
+			createdObject = creerStandard(colorier(params.couleur)) ;
 		} else
 		if(_obj.type == "standardTexture"){
 			var nx = params.nx || 1 ;
 			var ny = params.ny || 1 ;
-			var materiau = creerStandardTexture(params.image,colorier(params.couleur),nx, ny) ;
-			enregistrerDansAnnuaire(nom, materiau) ;
+			createdObject = creerStandardTexture(params.image,colorier(params.couleur),nx, ny) ;
 		} else
 		if(_obj.type == "soleil"){
-			var soleil = creerSoleil() ;
-			enregistrerDansAnnuaire(nom, soleil) ;
+			createdObject = creerSoleil() ;
 		} else
 		if(_obj.type == "ampoule"){
 			var couleur     = colorier(params.couleur) || 0xffffff ;
 			var intensite   = params.intensite || 1.0 ;
 			var portee      = params.portee || 3.0 ;
 			var attenuation = params.attenuation || 1.0 ;
-			var ampoule = creerSourcePonctuelle(couleur, intensite, portee, attenuation) ;
-			enregistrerDansAnnuaire(nom, ampoule) ;
+			createdObject = creerSourcePonctuelle(couleur, intensite, portee, attenuation) ;
 		} else
 		if(_obj.type == "audio"){
 			var loop        = params.loop     || false ;
 			var volume      = params.volume   || 1.0 ;
 			var distance    = params.distance || 20.0 ;
 			var url         = params.url      || "" ;
-			var audio = creerSourceAudio3d(listener,url,loop, volume, distance) ;
-			enregistrerDansAnnuaire(nom,audio) ;
+			createdObject = creerSourceAudio3d(listener,url,loop, volume, distance) ;
 		}
+
+
+		if (params.hasOwnProperty('comment')) {
+			createdObject.userData.comment = params.comment;
+		}
+		enregistrerDansAnnuaire(nom,createdObject) ;
 
 	} ;
 
