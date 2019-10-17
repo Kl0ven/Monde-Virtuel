@@ -64,7 +64,7 @@ function creerPoster1(nom,largeur, hauteur, nomImage){
 	return groupe ;
 }
 
-function creerText(description,largeur,hauteur){
+function creerText(nom, description,largeur,hauteur){
 	canvas = document.createElement('canvas')
 	context = canvas.getContext('2d');
 	canvas.width=1000
@@ -81,6 +81,7 @@ function creerText(description,largeur,hauteur){
 	texture = new THREE.CanvasTexture(canvas);
 	var material = new THREE.MeshLambertMaterial({color:0xffffff,map:texture}) ;
 	var mesh = new THREE.Mesh(geometry,material)
+	mesh.name = nom
     return mesh;
 }
 

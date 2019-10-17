@@ -71,7 +71,7 @@ function parser(){
 			var largeur = params.largeur ;
 			var hauteur = params.hauteur ;
 			var desc    = params.texte ;
-			createdObject   = creerText(desc,largeur,hauteur) ;
+			createdObject   = creerText(nom, desc,largeur,hauteur) ;
 		} else
 		if(_obj.type == "axes"){
             var longueur = params.longueur || 1 ;

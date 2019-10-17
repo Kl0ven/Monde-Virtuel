@@ -88,27 +88,8 @@ function animate(){
 
 	dt = chrono.getDelta();
 	requestAnimationFrame(animate);
-	lastSeenObject(dt)
+	updateLastSeenObject(dt)
+	updateCloseByObject();
 	controls.update(dt);
 	renderer.render(scene, camera);
-}
-
-
-function lastSeenObject(dt){
-	var o = controls.raycaster()
-	if (o ===null) return;
-	if (o.object.id == lastObjectSeenID){
-		lastObjectSeenTime += dt;
-	} else {
-		lastObjectSeenID = o.object.id;
-		lastObjectSeenTime = 0
-		info.style.opacity = 0;
-	}
-
-	if (lastObjectSeenTime > focusTimeThreshold && o.object.userData.hasOwnProperty('comment')){
-		let info = document.getElementById('info')
-		info.innerText = o.object.userData.comment;
-		info.style.opacity = 1;
-	}
-
 }
