@@ -6,7 +6,7 @@ var Raycaster = function () {
 	var origin;
 	var distance = 100;
 	var endPoint = new THREE.Vector3();
-	var line
+	var lines = []
 
 	this.set = function (origin, direction){
 		this.direction = direction;
@@ -21,7 +21,7 @@ var Raycaster = function () {
 		var ret = null;
 		var children = scene.children;
 		for (var i in children) {
-			if (children[i].name === 'PointerLockControls') continue;
+			if (children[i].name === 'PointerLockControls' || children[i].type === "Line") continue;
 			objs.push(children[i]);
 		}
 		var result = raycaster.intersectObjects(objs, true);
@@ -32,16 +32,19 @@ var Raycaster = function () {
 	}
 
 	this.drawLine = function (){
-		// scene.remove(line);
+		for (var i = 10; i < lines.length; i++) {
+			scene.remove(lines[i]);
+		}
 		endPoint.addVectors ( this.origin, this.direction.multiplyScalar( distance ) );
 		var geometry = new THREE.Geometry();
 		geometry.vertices.push( this.origin );
 		geometry.vertices.push( endPoint );
 		var material = new THREE.LineBasicMaterial( { color : 0xff0000 } );
-		line = new THREE.Line( geometry, material );
+		lines.push(new THREE.Line( geometry, material ));
 		// console.log(line);
-		scene.add( line );
+		scene.add( lines[lines.length - 1] );
 	}
+	this.remove
 
 }
 
