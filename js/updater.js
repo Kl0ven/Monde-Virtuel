@@ -21,24 +21,28 @@ function updateLastSeenObject(dt) {
 
 function updateCloseByObject() {
 	const camPos = controls.getObject().position;
-	let nearestObjects = getNearestObjects(10, camPos);
-	let obj;
-	let intersect;
-	for (var i in nearestObjects) {
-		obj = nearestObjects[i];
-		direction.subVectors(obj.worldPosition, camPos).normalize();
-		raycaster.set(camPos, direction);
-		intersect = raycaster.cast()
-		if (intersect === null) {
-			console.error("Not found");
-			continue;
-		}
-
-		if (intersect.object.id == obj.id){
-			console.log("found");
-		} else {
-		}
-	}
+	// let nearestObjects = getNearestObjects(10, camPos);
+	// let obj;
+	// let intersect;
+	// nearbyObjectsId = [];
+	// for (var i in nearestObjects) {
+	// 	obj = nearestObjects[i];
+	// 	direction.subVectors(obj.worldPosition, camPos).normalize();
+	// 	raycaster.set(camPos, direction);
+	// 	intersect = raycaster.cast(true);
+	// 	if (intersect === null) {
+	// 		console.error("Not found");
+	// 		continue;
+	// 	}
+	//
+	// 	if (intersect.object.id == obj.id){
+	// 		nearbyObjectsId.push(obj.id)
+	//
+	// 	} else {
+	// 		console.log("not inetersect");
+	// 	}
+	// }
+	// displaymanager.updateNames(nearbyObjectsId);
 }
 
 
@@ -51,9 +55,11 @@ function getNearestObjects(radius, camPos){
 		if (allowedObjectType.indexOf(mesh.type) >=0 && mesh.name !== "sol") {
 			meshPos = mesh.position.clone()
 			meshPos.applyMatrix4(mesh.matrixWorld);
-			meshPos.divideScalar(2);
+			console.log("camera", camPos, mesh.position, meshPos);
+			// meshPos.divideScalar(2);
 			if (camPos.distanceTo(meshPos) < radius) {
 				meshInRange.push({"id": mesh.id, "worldPosition": meshPos});
+				pointeur.position.copy(meshPos);
 			}
 		}
 	}

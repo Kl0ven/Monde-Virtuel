@@ -25,10 +25,11 @@ var focusTimeThreshold = 2
 
 var direction = new THREE.Vector3();
 var raycaster = new Raycaster();
+var displaymanager;
 
 function init(){
 	modeFPS()
-
+	displaymanager = new DisplayManager();
 	chrono = new THREE.Clock();
 
 	annuaire = {};

@@ -118,6 +118,10 @@ function parser(){
 		if (params.hasOwnProperty('comment')) {
 			createdObject.userData.comment = params.comment;
 		}
+
+		if (params.hasOwnProperty('properName')) {
+			createdObject.userData.properName = params.properName;
+		}
 		enregistrerDansAnnuaire(nom,createdObject) ;
 
 	} ;
