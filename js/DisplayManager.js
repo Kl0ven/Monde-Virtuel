@@ -1,6 +1,7 @@
 var DisplayManager = function () {
 	var currentId = [];
 	var container = document.getElementById('nearbyObjects');
+
 	this.updateNames = function (newId) {
 		let n;
 		let actualId = [];
@@ -16,15 +17,15 @@ var DisplayManager = function () {
 		}
 		let diff = this.arr_diff(currentId, actualId);
 		let toDelete = this.arr_diff(diff, createdId);
+
 		for (var i in toDelete) {
-			this.deleteElement(n);
+			this.deleteElement(toDelete[i]);
 		}
-		this.currentId = actualId;
+		currentId = actualId;
 	}
 
 
 	this.addElement = function(n){
-		console.log(n);
 		let obj = scene.getObjectById(n);
 		if (obj.userData.hasOwnProperty("properName")){
 			let div = document.createElement("div");
@@ -53,9 +54,8 @@ var DisplayManager = function () {
 				a[a2[i]] = true;
 			}
 		}
-
 		for (var k in a) {
-			diff.push(k);
+			diff.push(parseInt(k));
 		}
 
 		return diff;

@@ -66,7 +66,7 @@ function init(){
 	scene.add( controls.getObject() );
 
 	chrono.start();
-
+	// window.setInterval(updateCloseByObject,1000);
 };
 
 function enregistrerDansAnnuaire(nom,objet){
@@ -82,11 +82,11 @@ function creerScene(){
 
 	//scene.add(creerSoleil());
 	pointeur = creerSphere("pointeur",0.05,16,materiauRouge);
+	pointeur.position.y = 15;
 	scene.add(pointeur);
 
 	// parser();
 	chargerDocument();
-	console.log(scene.children);
 }
 
 
