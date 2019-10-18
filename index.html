@@ -8,6 +8,7 @@
 </head>
 <body>
 	<script src="lib/three.min.js"></script>
+	<script src="js/Raycaster.js"></script>
 	<script src="js/PointerLockControls.js"></script>
 	<script src="js/base.js"></script>
 	<script src="js/parser.js"></script>
@@ -20,7 +21,8 @@
 		creerScene() ;
 		animate() ;
 		setTimeout(() =>{
-			document.getElementById('info').style.visibility = 'visible'
+			document.getElementById('info').style.visibility = 'visible';
+			document.getElementById('nearbyObjects').style.visibility = 'visible'
 		},1000)
 	});
 	</script>
@@ -34,4 +36,5 @@
 	</div>
 
 	<div id="info">Description</div>
+	<div id="nearbyObjects"></div>
 	</html>

@@ -1,6 +1,7 @@
 
 function updateLastSeenObject(dt) {
-	var o = controls.raycaster()
+	raycaster.setFromCamera(center, camera);
+	var o = raycaster.cast()
 	if (o ===null) return;
 	if (o.object.id == lastObjectSeenID){
 		lastObjectSeenTime += dt;
@@ -19,13 +20,30 @@ function updateLastSeenObject(dt) {
 }
 
 function updateCloseByObject() {
-	let nearestObjects = getNearestObjects(10);
+	const camPos = controls.getObject().position;
+	let nearestObjects = getNearestObjects(10, camPos);
+	let obj;
+	let intersect;
+	for (var i in nearestObjects) {
+		obj = nearestObjects[i];
+		direction.subVectors(obj.worldPosition, camPos).normalize();
+		raycaster.set(camPos, direction);
+		intersect = raycaster.cast()
+		if (intersect === null) {
+			console.error("Not found");
+			continue;
+		}
+
+		if (intersect.object.id == obj.id){
+			console.log("found");
+		} else {
+		}
+	}
 }
 
 
-function getNearestObjects(radius){
+function getNearestObjects(radius, camPos){
 	const allowedObjectType = ["Mesh"];
-	const camPos = controls.getObject().position;
 	let meshPos = new THREE.Vector3();
 	let meshInRange = [];
 	for (var i in annuaire) {

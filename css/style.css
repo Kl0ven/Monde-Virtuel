@@ -50,3 +50,19 @@ html, body, canvas {
 	max-width: 30%;
 	transition: opacity 0.5s ease-in-out;
 }
+
+
+#nearbyObjects {
+	visibility: hidden;
+	position: absolute;
+	bottom: 10px;
+	z-index: 100;
+	display: block;
+	color: white;
+	left: 10px;
+	background-color: rgba(0,0,0,0.5);
+	padding: 10px;
+	opacity: : 0;
+	max-width: 30%;
+	transition: opacity 0.5s ease-in-out;
+}

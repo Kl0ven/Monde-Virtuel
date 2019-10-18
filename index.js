@@ -15,13 +15,16 @@ var windowHalfY = window.innerHeight / 2.0;
 
 var pointeur;
 var isPointerLocked = false
-var mouseX = mouseY = 0.0;
+var center = new THREE.Vector2(0, 0);
 var ray = null
 var data;
 
 var lastObjectSeenID;
 var lastObjectSeenTime;
 var focusTimeThreshold = 2
+
+var direction = new THREE.Vector3();
+var raycaster = new Raycaster();
 
 function init(){
 	modeFPS()
@@ -35,6 +38,7 @@ function init(){
 	document.body.appendChild(renderer.domElement);
 
 	scene = new THREE.Scene();
+	scene.name = "scene"
 	enregistrerDansAnnuaire("scene",scene);
 
 	camera = new THREE.PerspectiveCamera(70.0, window.innerWidth/window.innerHeight, 0.1, 100.0);
@@ -81,6 +85,7 @@ function creerScene(){
 
 	// parser();
 	chargerDocument();
+	console.log(scene.children);
 }
 
 
