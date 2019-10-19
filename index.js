@@ -26,6 +26,8 @@ var focusTimeThreshold = 2
 var direction = new THREE.Vector3();
 var raycaster = new Raycaster();
 var displaymanager;
+var map;
+
 
 function init(){
 	modeFPS()
@@ -65,6 +67,9 @@ function init(){
 	controls = new PointerLockControls(camera);
 	scene.add( controls.getObject() );
 
+	// create map and cells
+	// set last param for debug
+	map = new Map(100,50, true);
 	chrono.start();
 	// window.setInterval(updateCloseByObject,1000);
 };
