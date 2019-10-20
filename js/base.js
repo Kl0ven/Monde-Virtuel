@@ -27,6 +27,7 @@ function creerCloison(nom,largeur, hauteur, epaisseur, nx, ny, nz, materiau){
 	groupe.name = nom ;
 	groupe.add(mesh) ;
 	mesh.position.set(0,hauteur/2.0,0) ;
+	groupe.userData.wall = true;
 	return groupe ;
 }
 

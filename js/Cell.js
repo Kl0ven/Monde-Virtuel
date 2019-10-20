@@ -4,20 +4,42 @@ class Cell {
 		this.debug = debug;
 		this.value = Math.random();
 		this.map = map;
+		this.wall = false;
 		if (debug) this.displayCell();
 	}
 
 	displayCell(){
-		var geometry = new THREE.PlaneGeometry(this.map.cellSize, this.map.cellSize);
-		var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.FrontSide} );
-		var plane = new THREE.Mesh( geometry, material );
-		plane.position.copy(this.to3DVect(0));
-		plane.rotateX(-Math.PI/2);
-		material.color.setHSL(this.value, 1,0.5);
-		scene.add( plane );
+		this.geometry = new THREE.PlaneGeometry(this.map.cellSize, this.map.cellSize);
+		this.material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.FrontSide} );
+		this.plane = new THREE.Mesh( this.geometry, this.material );
+		this.plane.position.copy(this.to3DVect(0));
+		this.plane.rotateX(-Math.PI/2);
+		this.updateColor();
+		scene.add(this.plane);
 	}
 
 	to3DVect(height){
-		return new THREE.Vector3(this.position.x, height, this.position.y)
+		return new THREE.Vector3(this.position.x, height, this.position.y);
+	}
+
+	updateColor(){
+		this.material.color.setHSL((1-this.value) * (2/3), 1,0.5);
+	}
+
+	setWall(isWall){
+		this.wall = isWall;
+		if (isWall) {
+			this.value = 0;
+			if (this.debug) {
+				this.updateColor();
+			}
+		}
+	}
+
+	createBox3(height){
+		let box = new THREE.Box3();
+		let size = new THREE.Vector3(this.map.cellSize, height, this.map.cellSize);
+		box.setFromCenterAndSize(this.to3DVect(height/2),size)
+		return box;
 	}
 }

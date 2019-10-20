@@ -67,9 +67,6 @@ function init(){
 	controls = new PointerLockControls(camera);
 	scene.add( controls.getObject() );
 
-	// create map and cells
-	// set last param for debug
-	map = new Map(100,50, true);
 	chrono.start();
 	// window.setInterval(updateCloseByObject,1000);
 };
@@ -91,7 +88,12 @@ function creerScene(){
 	scene.add(pointeur);
 
 	// parser();
-	chargerDocument();
+	chargerDocument(() => {
+		// create map and cells
+		// set last param for debug
+		map = new Map(100,50, true);
+	});
+
 }
 
 
