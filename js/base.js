@@ -45,6 +45,7 @@ function creerPoster(nom,largeur, hauteur, nomImage){
 	var mat   = creerLambertTexture(nomImage, 0xffffff) ;
 	var mesh  = new THREE.Mesh(geo, mat) ;
 	mesh.name = nom ;
+	mesh.userData.poi = true;
 	return mesh ;
 }
 
@@ -57,7 +58,7 @@ function creerPoster1(nom,largeur, hauteur, nomImage){
 	dos.rotation.y = Math.PI ;
 	dos.position.z = -0.01 ;
 	mesh.position.z = 0.01 ;
-
+	mesh.userData.poi = true;
 	var groupe = new THREE.Group() ;
 	groupe.add(mesh) ;
 	groupe.add(dos) ;
@@ -83,6 +84,7 @@ function creerText(nom, description,largeur,hauteur){
 	var material = new THREE.MeshLambertMaterial({color:0xffffff,map:texture}) ;
 	var mesh = new THREE.Mesh(geometry,material)
 	mesh.name = nom
+	mesh.userData.poi = true;
     return mesh;
 }
 

@@ -7,6 +7,7 @@ class Map {
 		this.cells = [];
 		this.createCell();
 		this.UpdateWall();
+		this.computeCellValue();
 	}
 
 
@@ -43,5 +44,37 @@ class Map {
 
 			}
 		}
+	}
+
+	computeCellValue(){
+		let children = this.getPOI()
+		console.log(children);
+		// for (var i in children) {
+		// 	let child = children[i];
+		// 	console.log(child);
+		// 	if (child.userData.hasOwnProperty('poi') && child.userData.poi){
+		// 		console.log(child);
+		// 		// for (var i = 0; i < this.cells.length; i++) {
+		// 		// 	let ligne = this.cells[i];
+		// 		// 	for (var j = 0; j < ligne.length; j++) {
+		// 		// 		let cell = ligne[j];
+		// 		// 		if (boundingBox.intersectsBox(cell.createBox3(1))) {
+		// 		// 			cell.setWall(true);
+		// 		// 		}
+		// 		// 	}
+		// 		// }
+		//
+		// 	}
+		// }
+	}
+
+	getPOI(obj){
+		let poi = []
+		scene.traverse( function( node ) {
+			if ( node instanceof THREE.Mesh && node.userData.hasOwnProperty("poi") && node.userData.poi) {
+				poi.push(node)
+			}
+		} );
+		return poi
 	}
 }
