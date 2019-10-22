@@ -49,4 +49,8 @@ class Cell {
 		box.setFromCenterAndSize(this.to3DVect(height/2),size)
 		return box;
 	}
+
+	diffPotentiel(cell){
+		return this.value - cell.value;
+	}
 }

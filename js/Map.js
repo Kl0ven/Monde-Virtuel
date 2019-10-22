@@ -122,4 +122,29 @@ class Map {
 		} );
 		return poi
 	}
+
+	getNextCell(){
+		let camPos = new THREE.Vector3();
+		camera.getWorldPosition(camPos);
+		let x =  Math.floor(camPos.x / this.cellSize) + this.nbCell/2;
+		let z = Math.floor(camPos.z / this.cellSize) + this.nbCell/2;
+		if (x < 0 || x > this.nbCell || z < 0 || z > this.nbCell ){
+			return null;
+		}
+		let camCell = this.cells[x][z];
+		let max = 0;
+		let maximisingCell = null;
+		for (var i = x-1; i <= x+1; i++) {
+			for (var j = z-1; j <= z+1; j++) {
+				if (i == x && j == z) continue;
+				if (i < 0 || i > this.nbCell || j < 0 || j > this.nbCell) continue;
+				let cell = this.cells[i][j]
+				if  (cell.diffPotentiel(camCell) > max){
+					max = cell.diffPotentiel(camCell);
+					maximisingCell = cell;
+				}
+			}
+		}
+		return maximisingCell;
+	}
 }
