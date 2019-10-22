@@ -2,10 +2,10 @@ class Cell {
 	constructor(position, map, debug=false) {
 		this.position = position;
 		this.debug = debug;
-		this.value = Math.random();
+		this.value;
 		this.map = map;
 		this.wall = false;
-		if (debug) this.displayCell();
+		this.empty = true;
 	}
 
 	displayCell(){
@@ -29,11 +29,18 @@ class Cell {
 	setWall(isWall){
 		this.wall = isWall;
 		if (isWall) {
+			this.empty = false;
 			this.value = 0;
 			if (this.debug) {
-				this.updateColor();
+				this.displayCell();
 			}
 		}
+	}
+
+	setValue(v){
+		this.empty = false;
+		this.value = v;
+		if (this.debug) this.displayCell();
 	}
 
 	createBox3(height){

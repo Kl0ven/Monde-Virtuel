@@ -5,6 +5,8 @@ class Map {
 		this.cellSize = size / nbCell;
 		this.debug = debug;
 		this.cells = [];
+		this.iteration = 5;
+		this.coefPotentiel = 0.95;
 		this.createCell();
 		this.UpdateWall();
 		this.computeCellValue();
@@ -48,24 +50,67 @@ class Map {
 
 	computeCellValue(){
 		let children = this.getPOI()
-		console.log(children);
-		// for (var i in children) {
-		// 	let child = children[i];
-		// 	console.log(child);
-		// 	if (child.userData.hasOwnProperty('poi') && child.userData.poi){
-		// 		console.log(child);
-		// 		// for (var i = 0; i < this.cells.length; i++) {
-		// 		// 	let ligne = this.cells[i];
-		// 		// 	for (var j = 0; j < ligne.length; j++) {
-		// 		// 		let cell = ligne[j];
-		// 		// 		if (boundingBox.intersectsBox(cell.createBox3(1))) {
-		// 		// 			cell.setWall(true);
-		// 		// 		}
-		// 		// 	}
-		// 		// }
-		//
-		// 	}
-		// }
+		let r = this.cellSize;
+		let v = 1;
+		for (var z = 0; z < this.iteration; z++) {
+			for (var i in children) {
+				let child = children[i];
+				let pos = this.getWatchingPosition(child);
+				let cells = this.getCircleEmptyCells(r, pos)
+				for (var c in cells) {
+					cells[c].setValue(v)
+				}
+			}
+			r += this.cellSize;
+			v *= this.coefPotentiel;
+		}
+		this.fillemptyCell();
+	}
+
+	fillemptyCell(){
+		for (var i = 0; i < this.cells.length; i++) {
+			let ligne = this.cells[i];
+			for (var j = 0; j < ligne.length; j++) {
+				let cell = ligne[j];
+				if (cell.empty) {
+					cell.setValue(0);
+				}
+			}
+		}
+	}
+	getWatchingPosition(obj){
+		let world = obj.matrixWorld;
+		let ext = new THREE.Vector3(0, 0, 2);
+		ext.applyMatrix4(world);
+		return ext;
+	}
+
+	getCircleEmptyCells(r, poi_pos){
+		let cells = []
+		for (var i = 0; i < this.cells.length; i++) {
+			let ligne = this.cells[i];
+			for (var j = 0; j < ligne.length; j++) {
+				let cell = ligne[j];
+				if (cell.empty && this.isCellInCircle(cell.position, poi_pos, r)){
+					cells.push(cell);
+				}
+			}
+
+		}
+		return cells;
+	}
+
+	isCellInCircle(cellCenter, circleCenter, r) {
+		let a = cellCenter.x;
+		let b = cellCenter.y;
+		let x = circleCenter.x;
+		let y = circleCenter.z
+		var dist_points = (a - x) * (a - x) + (b - y) * (b - y);
+		r *= r;
+		if (dist_points < r) {
+			return true;
+		}
+		return false;
 	}
 
 	getPOI(obj){
