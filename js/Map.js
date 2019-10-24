@@ -5,7 +5,7 @@ class Map {
 		this.cellSize = size / nbCell;
 		this.debug = debug;
 		this.cells = [];
-		this.iteration = 5;
+		this.iteration = 20;
 		this.coefPotentiel = 0.95;
 		this.createCell();
 		this.UpdateWall();
@@ -129,9 +129,10 @@ class Map {
 		let x =  Math.floor(camPos.x / this.cellSize) + this.nbCell/2;
 		let z = Math.floor(camPos.z / this.cellSize) + this.nbCell/2;
 		if (x < 0 || x > this.nbCell || z < 0 || z > this.nbCell ){
-			return null;
+			return [null, false];
 		}
 		let camCell = this.cells[x][z];
+		if (camCell.value === 1) return [camCell, true];
 		let max = 0;
 		let maximisingCell = null;
 		for (var i = x-1; i <= x+1; i++) {
@@ -145,6 +146,6 @@ class Map {
 				}
 			}
 		}
-		return maximisingCell;
+		return [maximisingCell, false];
 	}
 }

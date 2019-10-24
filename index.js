@@ -28,7 +28,7 @@ var raycaster = new Raycaster();
 var displaymanager;
 var map;
 
-const debug = false;
+const debug = true;
 
 function init(){
 	modeFPS()
