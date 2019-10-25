@@ -128,7 +128,7 @@ class Map {
 		camera.getWorldPosition(camPos);
 		let x =  Math.floor(camPos.x / this.cellSize) + this.nbCell/2;
 		let z = Math.floor(camPos.z / this.cellSize) + this.nbCell/2;
-		if (x < 0 || x > this.nbCell || z < 0 || z > this.nbCell ){
+		if (x < 0 || x > this.nbCell-1 || z < 0 || z > this.nbCell-1 ){
 			return [null, false];
 		}
 		let camCell = this.cells[x][z];
@@ -138,8 +138,9 @@ class Map {
 		for (var i = x-1; i <= x+1; i++) {
 			for (var j = z-1; j <= z+1; j++) {
 				if (i == x && j == z) continue;
-				if (i < 0 || i > this.nbCell || j < 0 || j > this.nbCell) continue;
+				if (i < 0 || i > this.nbCell-1 || j < 0 || j > this.nbCell-1) continue;
 				let cell = this.cells[i][j]
+
 				if  (cell.diffPotentiel(camCell) > max){
 					max = cell.diffPotentiel(camCell);
 					maximisingCell = cell;
