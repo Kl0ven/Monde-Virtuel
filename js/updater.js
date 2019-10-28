@@ -57,3 +57,23 @@ function getNearestObjects(radius, camPos){
 	}
 	return meshInRange
 }
+
+
+function updateCellValue(dt){
+	if (map === undefined) return;
+	let [x, z] = map.getCamCellPos();
+	if (x == null) return;
+	let camCell = map.getCellAtPos(x,z);
+
+	if (camCell == lastCellIn){
+		lastCellInTime += dt;
+	} else {
+		lastCellIn = camCell;
+		lastCellInTime = 0
+	}
+
+	if (lastCellInTime > cellTimeThreshold && camCell.value == 1){
+		map.resetPoiCells(camCell);
+	}
+
+}

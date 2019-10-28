@@ -23,6 +23,10 @@ var lastObjectSeenID;
 var lastObjectSeenTime;
 var focusTimeThreshold = 2
 
+var lastCellIn;
+var lastCellInTime;
+var cellTimeThreshold = 2
+
 var direction = new THREE.Vector3();
 var raycaster = new Raycaster();
 var displaymanager;
@@ -93,7 +97,10 @@ function creerScene(){
 	// parser();
 	chargerDocument(() => {
 		// create map and cells
-		map = new Map(100,50);
+		// premier param size
+		// duxieme param nb of cells
+		// troisieme param iterration of computed cells
+		map = new Map(100, 50, 10);
 	});
 
 }
@@ -106,5 +113,6 @@ function animate(){
 	updateLastSeenObject(dt)
 	updateCloseByObject();
 	controls.update(dt);
+	updateCellValue(dt);
 	renderer.render(scene, camera);
 }

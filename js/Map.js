@@ -1,10 +1,10 @@
 class Map {
-	constructor(size, nbCell) {
+	constructor(size, nbCell, iter) {
 		this.size = size;
 		this.nbCell = nbCell;
 		this.cellSize = size / nbCell;
 		this.cells = [];
-		this.iteration = 20;
+		this.iteration = iter;
 		this.coefPotentiel = 0.95;
 		this.createCell();
 		this.UpdateWall();
@@ -66,6 +66,21 @@ class Map {
 		this.fillemptyCell();
 	}
 
+
+	resetPoiCells(centerCell) {
+		let r = this.cellSize * this.iteration;
+		for (var i = 0; i < this.cells.length; i++) {
+			let ligne = this.cells[i];
+			for (var j = 0; j < ligne.length; j++) {
+				let cell = ligne[j];
+				if (this.isCellInCircle(cell.position, centerCell.to3DVect(0), r)){
+					cell.setValue(0);
+				}
+			}
+
+		}
+	}
+
 	fillemptyCell(){
 		for (var i = 0; i < this.cells.length; i++) {
 			let ligne = this.cells[i];
@@ -122,12 +137,24 @@ class Map {
 		return poi
 	}
 
-	getNextCell(){
+	getCamCellPos(){
 		let camPos = new THREE.Vector3();
 		camera.getWorldPosition(camPos);
 		let x =  Math.floor(camPos.x / this.cellSize) + this.nbCell/2;
 		let z = Math.floor(camPos.z / this.cellSize) + this.nbCell/2;
 		if (x < 0 || x > this.nbCell-1 || z < 0 || z > this.nbCell-1 ){
+			return [null];
+		}
+		return [x, z];
+	}
+
+	getCellAtPos(x,y){
+		return this.cells[x][y];
+	}
+
+	getNextCell(){
+		let [x, z] = this.getCamCellPos()
+		if (x == null){
 			return [null, false];
 		}
 		let camCell = this.cells[x][z];
