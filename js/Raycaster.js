@@ -13,8 +13,8 @@ var Raycaster = function () {
 		this.origin	= origin;
 		THREE.Raycaster.prototype.set.call(this, origin, direction)
 	}
-	this.cast = function (debug = false){
-		if (debug) {
+	this.cast = function (){
+		if (debugRayCast && this.direction !== undefined) {
 			this.drawLine()
 		}
 		var objs = [];

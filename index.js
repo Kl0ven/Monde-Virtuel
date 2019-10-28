@@ -28,7 +28,9 @@ var raycaster = new Raycaster();
 var displaymanager;
 var map;
 
-const debug = true;
+const debugMap = true;
+const debugPointerLockSpeed = false;
+const debugRayCast = false;
 
 function init(){
 	modeFPS()
@@ -45,7 +47,7 @@ function init(){
 	scene.name = "scene"
 	enregistrerDansAnnuaire("scene",scene);
 
-	camera = new THREE.PerspectiveCamera(70.0, window.innerWidth/window.innerHeight, 0.1, debug ? 100.0 : 100.0);
+	camera = new THREE.PerspectiveCamera(70.0, window.innerWidth/window.innerHeight, 0.1, 100.0);
 	camera.position.set(0,0,0);
 	camera.lookAt(new THREE.Vector3(0.0,0,0.0));
 
@@ -91,8 +93,7 @@ function creerScene(){
 	// parser();
 	chargerDocument(() => {
 		// create map and cells
-		// set last param for debug
-		map = new Map(100,50, debug);
+		map = new Map(100,50);
 	});
 
 }

@@ -190,7 +190,7 @@ var PointerLockControls = function (camera) {
 
 		totalVelocity.addVectors(velocity, poiDir);
 
-		if (debug) {
+		if (debugPointerLockSpeed) {
 			this.displayArrow(poiDir, 0xff0000 );
 			this.displayArrow(velocity.clone().applyAxisAngle(new THREE.Vector3(0, 1, 0), yawObject.rotation.y), 0x00ff00 );
 			this.displayArrow(totalVelocity, 0x00ffff);

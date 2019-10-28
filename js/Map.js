@@ -1,9 +1,8 @@
 class Map {
-	constructor(size, nbCell, debug=false) {
+	constructor(size, nbCell) {
 		this.size = size;
 		this.nbCell = nbCell;
 		this.cellSize = size / nbCell;
-		this.debug = debug;
 		this.cells = [];
 		this.iteration = 20;
 		this.coefPotentiel = 0.95;
@@ -17,7 +16,7 @@ class Map {
 		for (var x = -this.size/2 + this.cellSize/2; x < this.size/2; x += this.cellSize) {
 			let line = [];
 			for (var z = -this.size/2 + this.cellSize/2; z < this.size/2; z  += this.cellSize) {
-				line.push(new Cell(new THREE.Vector2(x, z), this, this.debug));
+				line.push(new Cell(new THREE.Vector2(x, z), this, debugMap));
 			}
 			this.cells.push(line);
 		}
@@ -30,7 +29,7 @@ class Map {
 			if (child.userData.hasOwnProperty('wall') && child.userData.wall){
 				let boundingBox = new THREE.Box3();
 				boundingBox.setFromObject(child)
-				if (this.debug){
+				if (debugMap){
 					var box = new THREE.Box3Helper( boundingBox, 0xffff00 );
 					scene.add( box );
 				}
