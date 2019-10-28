@@ -152,6 +152,16 @@ var PointerLockControls = function (camera) {
 		nextCellDir.subVectors(cellPosition, yawObject.position).normalize();
 		return nextCellDir;
 	}
+	this.displayArrow = function (dir,color){
+		let origin = new THREE.Vector3();
+		origin.copy(yawObject.position);
+		origin.y = 1;
+
+
+		var arrowHelper = new THREE.ArrowHelper( dir, origin, 3, color );
+		scene.add( arrowHelper );
+	}
+
 
 	this.update = function (delta) {
 		if (scope.enabled === false) return;
@@ -175,9 +185,16 @@ var PointerLockControls = function (camera) {
 		velocity.clampScalar(-maxVelocity, maxVelocity);
 
 		let poiDir = this.getNearestPoiDirection();
-		poiDir.multiplyScalar(maxVelocity * 0.5);
+		poiDir.applyAxisAngle(new THREE.Vector3(0, 1, 0), -yawObject.rotation.y)
+		poiDir.multiplyScalar(maxVelocity * (-(2/3) * velocity.length() +0.5));
 
 		totalVelocity.addVectors(velocity, poiDir);
+
+		if (debug) {
+			this.displayArrow(poiDir, 0xff0000 );
+			this.displayArrow(velocity.clone().applyAxisAngle(new THREE.Vector3(0, 1, 0), yawObject.rotation.y), 0x00ff00 );
+			this.displayArrow(totalVelocity, 0x00ffff);
+		}
 
 		yawObject.translateX(totalVelocity.x);
 		yawObject.translateY(totalVelocity.y);
