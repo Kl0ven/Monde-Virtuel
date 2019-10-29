@@ -10,15 +10,15 @@ function colorier(coul){
 	return (couleurs[coul] || 0xffffff) ;
 }
 
-function chargerDocument(){
+function chargerDocument(cb){
 	var oReq = new XMLHttpRequest() ;
 	oReq.overrideMimeType("application/json");
-	oReq.onload = parser ;
+	oReq.onload = parser.bind(oReq, cb) ;
 	oReq.open("get","scene.json",true) ;
 	oReq.send() ;
 }
 
-function parser(){
+function parser(cb){
 	var obj = JSON.parse(this.responseText) ;
 	data = obj ;
 
@@ -151,6 +151,6 @@ function parser(){
 		}
 	}
 
-
+	cb();
 
 }

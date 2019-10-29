@@ -31,7 +31,9 @@ var PointerLockControls = function (camera) {
 	var world = null;
 	var origin = new THREE.Vector3();
 	var ext = new THREE.Vector3();
-
+	var nextCellDir = new THREE.Vector3();
+	var totalVelocity = new THREE.Vector3();
+	var isSpotOn = false;
 
 	var onMouseMove = function (event) {
 		if (scope.enabled === false) return;
@@ -65,27 +67,27 @@ var PointerLockControls = function (camera) {
 		switch (event.keyCode) {
 			case 38: // up
 			case 90: // w
-				moveForward = true;
-				break;
+			moveForward = true;
+			break;
 
 			case 37: // left
 			case 81: // a
-				moveLeft = true; break;
+			moveLeft = true; break;
 
 			case 40: // down
 			case 83: // s
-				moveBackward = true;
-				break;
+			moveBackward = true;
+			break;
 
 			case 39: // right
 			case 68: // d
-				moveRight = true;
-				break;
+			moveRight = true;
+			break;
 
 			case 32: // space
-				if (canJump === true) velocity.y += 0.15;
-				canJump = false;
-				break;
+			if (canJump === true) velocity.y += 0.15;
+			canJump = false;
+			break;
 		}
 	};
 
@@ -93,23 +95,23 @@ var PointerLockControls = function (camera) {
 		switch (event.keyCode) {
 			case 38: // up
 			case 90: // w
-				moveForward = false;
-				break;
+			moveForward = false;
+			break;
 
 			case 37: // left
 			case 81: // a
-				moveLeft = false;
-				break;
+			moveLeft = false;
+			break;
 
 			case 40: // down
 			case 83: // a
-				moveBackward = false;
-				break;
+			moveBackward = false;
+			break;
 
 			case 39: // right
 			case 68: // d
-				moveRight = false;
-				break;
+			moveRight = false;
+			break;
 		}
 	};
 
@@ -135,6 +137,32 @@ var PointerLockControls = function (camera) {
 		yawObject.rotation.y = Math.atan2(direction.x, direction.z) - Math.PI;
 	};
 
+	this.getNearestPoiDirection = function(){
+		let [nextCell, spotOn] =  map.getNextCell();
+		if (nextCell == null) return new THREE.Vector3();
+		if (spotOn){
+			if (!isSpotOn){
+				yawObject.position.copy(nextCell.to3DVect(yawObject.position.y));
+				isSpotOn = true;
+			}
+			return new THREE.Vector3();
+		}
+		isSpotOn = false;
+		let cellPosition = nextCell.to3DVect(yawObject.position.y);
+		nextCellDir.subVectors(cellPosition, yawObject.position).normalize();
+		return nextCellDir;
+	}
+	this.displayArrow = function (dir,color){
+		let origin = new THREE.Vector3();
+		origin.copy(yawObject.position);
+		origin.y = 1;
+
+
+		var arrowHelper = new THREE.ArrowHelper( dir, origin, 3, color );
+		scene.add( arrowHelper );
+	}
+
+
 	this.update = function (delta) {
 		if (scope.enabled === false) return;
 
@@ -153,11 +181,24 @@ var PointerLockControls = function (camera) {
 		if (isOnObject === true) {
 			velocity.y = Math.max(0, velocity.y);
 		}
-		if (Math.abs(velocity.x) > maxVelocity) velocity.x = velocity.x > 0 ? maxVelocity : -maxVelocity;
-		if (Math.abs(velocity.z) > maxVelocity) velocity.z = velocity.z > 0 ? maxVelocity : -maxVelocity;
-		yawObject.translateX(velocity.x);
-		yawObject.translateY(velocity.y);
-		yawObject.translateZ(velocity.z);
+
+		velocity.clampScalar(-maxVelocity, maxVelocity);
+
+		let poiDir = this.getNearestPoiDirection();
+		poiDir.applyAxisAngle(new THREE.Vector3(0, 1, 0), -yawObject.rotation.y)
+		poiDir.multiplyScalar(maxVelocity * (-(2/3) * velocity.length() +0.5));
+
+		totalVelocity.addVectors(velocity, poiDir);
+
+		if (debugPointerLockSpeed) {
+			this.displayArrow(poiDir, 0xff0000 );
+			this.displayArrow(velocity.clone().applyAxisAngle(new THREE.Vector3(0, 1, 0), yawObject.rotation.y), 0x00ff00 );
+			this.displayArrow(totalVelocity, 0x00ffff);
+		}
+
+		yawObject.translateX(totalVelocity.x);
+		yawObject.translateY(totalVelocity.y);
+		yawObject.translateZ(totalVelocity.z);
 
 		if (yawObject.position.y < 1.7) {
 			velocity.y = 0;

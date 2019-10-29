@@ -142,7 +142,12 @@
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 
-			}
+			},
+			{"type":"poster", "nom":"poster01",
+                "params":{"largeur":2.0,
+                "hauteur":2.0,
+             	"epaisseur":0.5,
+                "url":"assets/posters/trevarez/cuisine.jpg"}}
 
 
 
@@ -156,7 +161,7 @@
 			{"fonc":"placerXYZ", "objet":"sph01", "params":{"x":20, "y":2,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sph02", "params":{"x":-20,"y":2,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sph03", "params":{"x":0, "y":2,"z":3}},
-			{"fonc":"placerXYZ", "objet":"texte01", "params":{"x":0, "y":5.0,"z":0.6}},
+			{"fonc":"placerXYZ", "objet":"texte01", "params":{"x":0, "y":3.0,"z":0.6}},
 			{"fonc":"placerXYZ", "objet":"cloison01", "params":{"x":-43, "y":0.0,"z":-10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison02", "params":{"x":-43, "y":0.0,"z":10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison03", "params":{"x":-20, "y":0.0,"z":10.0}},
@@ -171,6 +176,7 @@
 			{"fonc":"orienterY", "objet":"cloison08", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"cloison09", "params":{"x":-2, "y":0.0,"z":-10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison10", "params":{"x":2, "y":0.0,"z":-10.0}},
+			{"fonc":"placerXYZ", "objet":"poster01", "params":{"x":5, "y":2.0,"z":0.1}},
 			{"fonc":"orienterY", "objet":"mur01", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"mur01", "params":{"x":-50, "y":0.0,"z":-30.0}},
 			{"fonc":"orienterY", "objet":"mur02", "params":{"angle":1.5708}},
@@ -206,6 +212,7 @@
 			{"rel":"parentDe","sujet":"scene","objet":"mur03"},
 			{"rel":"parentDe","sujet":"scene","objet":"mur04"},
 			{"rel":"parentDe","sujet":"scene","objet":"mur05"},
-			{"rel":"parentDe","sujet":"scene","objet":"etage"}
+			{"rel":"parentDe","sujet":"scene","objet":"etage"},
+			{"rel":"parentDe","sujet":"cloison04","objet":"poster01"}
 		      ]
 }

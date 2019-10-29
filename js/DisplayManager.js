@@ -36,7 +36,11 @@ var DisplayManager = function () {
 	}
 
 	this.deleteElement = function(n){
-		document.getElementById('name' + n).remove()
+		let div = document.getElementById('name' + n);
+		if (div) {
+			div.remove();
+		}
+
 	}
 
 	this.arr_diff = function (a1, a2) {
