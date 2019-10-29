@@ -71,12 +71,9 @@ class Map {
 		let r = this.cellSize;
 		let v = 1;
 		for (var z = 0; z < this.iteration; z++) {
-			console.log("#######################", v ,r);
-
 				let cells = this.getCircleEmptyCells(r,  centerCell.to3DVect(0), false);
 				for (var c in cells) {
 					if (cells[c].value <= v) {
-						console.log(cells[c].value, cells[c].wall);
 						cells[c].setValue(0);
 						cells[c].setColor('violet')
 					}
