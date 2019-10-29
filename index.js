@@ -100,7 +100,7 @@ function creerScene(){
 		// premier param size
 		// duxieme param nb of cells
 		// troisieme param iterration of computed cells
-		map = new Map(100, 50, 10);
+		map = new Map(100, 50, 5);
 	});
 
 }

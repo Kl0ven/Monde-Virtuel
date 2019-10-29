@@ -27,6 +27,7 @@ class Cell {
 	}
 
 	setColor(style){
+		if (!this.debug) return;
 		this.material.color.setStyle(style);
 	}
 
