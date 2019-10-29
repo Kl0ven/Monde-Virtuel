@@ -26,6 +26,10 @@ class Cell {
 		this.material.color.setHSL((1-this.value) * (2/3), 1,0.5);
 	}
 
+	setColor(style){
+		this.material.color.setStyle(style);
+	}
+
 	setWall(isWall){
 		this.wall = isWall;
 		if (isWall) {
@@ -41,6 +45,7 @@ class Cell {
 		this.empty = false;
 		this.value = v;
 		if (this.debug) this.displayCell();
+		if (v === 0 && this.wall === false) this.empty = true;
 	}
 
 	createBox3(height){

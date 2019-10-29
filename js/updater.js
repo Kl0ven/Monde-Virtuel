@@ -63,7 +63,7 @@ function updateCellValue(dt){
 	if (map === undefined) return;
 	let [x, z] = map.getCamCellPos();
 	if (x == null) return;
-	let camCell = map.getCellAtPos(x,z);
+	let camCell = map.getCellAtIndex(x,z);
 
 	if (camCell == lastCellIn){
 		lastCellInTime += dt;

@@ -54,8 +54,8 @@ class Map {
 		for (var z = 0; z < this.iteration; z++) {
 			for (var i in children) {
 				let child = children[i];
-				let pos = this.getWatchingPosition(child);
-				let cells = this.getCircleEmptyCells(r, pos)
+				let pos = this.getCellAtPos(this.getWatchingPosition(child)).to3DVect(0);
+				let cells = this.getCircleEmptyCells(r, pos, true);
 				for (var c in cells) {
 					cells[c].setValue(v)
 				}
@@ -68,17 +68,28 @@ class Map {
 
 
 	resetPoiCells(centerCell) {
-		let r = this.cellSize * this.iteration;
-		for (var i = 0; i < this.cells.length; i++) {
-			let ligne = this.cells[i];
-			for (var j = 0; j < ligne.length; j++) {
-				let cell = ligne[j];
-				if (this.isCellInCircle(cell.position, centerCell.to3DVect(0), r)){
-					cell.setValue(0);
-				}
-			}
+		let r = this.cellSize;
+		let v = 1;
+		for (var z = 0; z < this.iteration; z++) {
+			console.log("#######################", v ,r);
 
+				let cells = this.getCircleEmptyCells(r,  centerCell.to3DVect(0), false);
+				for (var c in cells) {
+					if (cells[c].value <= v) {
+						console.log(cells[c].value, cells[c].wall);
+						cells[c].setValue(0);
+						cells[c].setColor('violet')
+					}
+					else {
+						cells[c].setColor('#F0F8FF')
+					}
+
+				}
+			r += this.cellSize;
+			v *= this.coefPotentiel;
 		}
+
+
 	}
 
 	fillemptyCell(){
@@ -99,13 +110,13 @@ class Map {
 		return ext;
 	}
 
-	getCircleEmptyCells(r, poi_pos){
+	getCircleEmptyCells(r, poi_pos, empty){
 		let cells = []
 		for (var i = 0; i < this.cells.length; i++) {
 			let ligne = this.cells[i];
 			for (var j = 0; j < ligne.length; j++) {
 				let cell = ligne[j];
-				if (cell.empty && this.isCellInCircle(cell.position, poi_pos, r)){
+				if ((empty ? cell.empty : !cell.empty) && this.isCellInCircle(cell.position, poi_pos, r)){
 					cells.push(cell);
 				}
 			}
@@ -148,7 +159,16 @@ class Map {
 		return [x, z];
 	}
 
-	getCellAtPos(x,y){
+	getCellAtPos(pos){
+		let x =  Math.floor(pos.x / this.cellSize) + this.nbCell/2;
+		let z = Math.floor(pos.z / this.cellSize) + this.nbCell/2;
+		if (x < 0 || x > this.nbCell-1 || z < 0 || z > this.nbCell-1 ){
+			return [null];
+		}
+		return this.getCellAtIndex(x,z);
+	}
+
+	getCellAtIndex(x,y){
 		return this.cells[x][y];
 	}
 
