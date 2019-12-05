@@ -4,7 +4,7 @@
 			
 			{"type":"soleil" , "nom":"soleil"    , "params":{}},
 			{"type":"ampoule", "nom":"ampoule01" , "params":{"couleur":"blanc","intensite":5.0,"portee":6.0,"attenuation":1.0}},
-
+			
 			{"type":"standard", "nom":"materiauBleu","params":{"couleur":"bleu"}},
 			{"type":"standard", "nom":"materiauBlanc","params":{"couleur":"blanc"}},
 			{"type":"standard", "nom":"wfRouge","params":{"couleur":"rouge"}},
@@ -14,6 +14,18 @@
 			{"type":"standardTexture", "nom":"textureSol",
                                                   "params":{"image":"assets/textures/sols_plafonds/parquet2.jpg",
 												  "couleur":"gris","nx":5,"ny":5}
+			},
+			{"type":"standardTexture", "nom":"textureCouloir",
+				"params":{"image":"assets/murs/mur1.jpg",
+				"couleur":"blanc","nx":2,"ny":1}
+			},
+			{"type":"standardTexture", "nom":"textureCouloirAll",
+				"params":{"image":"assets/murs/mur1.jpg",
+				"couleur":"blanc","nx":1,"ny":1}
+			},
+			{"type":"basicTexture", "nom":"texturePlafond",
+				"params":{"image":"assets/sols_plafonds/roofpainting.jpg",
+				"couleur":"gris","nx":20,"ny":20}
 			},
 			{"type":"standardTexture", "nom":"textureBrique",
 				"params":{"image":"assets/murs/bricks1.jpg",
@@ -26,6 +38,14 @@
 			{"type":"standardTexture", "nom":"textureCouleur",
 				"params":{"image":"assets/murs/mur_couleur.jpg",
 				"couleur":"gris","nx":50,"ny":50}
+			},
+			{"type":"standardTexture", "nom":"TextureWallBlanc",
+				"params":{"image":"assets/murs/wall5.jpg",
+				"couleur":"gris","nx":2,"ny":2}
+			},
+			{"type":"standardTexture", "nom":"texturePorteBois",
+				"params":{"image":"assets/porte/boisclasse.jpg",
+				"couleur":"blanc","nx":1,"ny":1}
 			},
 			
 							
@@ -61,27 +81,27 @@
                                                      "hauteur":0.1,
                                                      "epaisseur":100.0,
 						     "nl":10, "ne":10, "nh":10,
-													 "materiau":"textureDante"}},
+													 "materiau":"texturePlafond"}},
 			{"type":"cloison", "nom":"cloison01",
 											"params":{"largeur":14.0, 
 													  "hauteur":6.0,
 										              "epaisseur":0.1,
-													  "materiau":"textureDante"}},
+													  "materiau":"textureCouloir"}},
 			{"type":"cloison", "nom":"cloison02",
 											"params":{"largeur":14.0, 
 													  "hauteur":6.0,
 													  "epaisseur":0.1,
-													  "materiau":"textureDante"}},
+													  "materiau":"textureCouloir"}},
 			{"type":"cloison", "nom":"cloison03",
-											"params":{"largeur":28.0, 
+											"params":{"largeur":14.0, 
 													  "hauteur":6.0,
 													  "epaisseur":0.1,
-													  "materiau":"textureDante"}},
+													  "materiau":"textureCouloir"}},
 			{"type":"cloison", "nom":"cloison04",
-											"params":{"largeur":28.0, 
+											"params":{"largeur":14.0, 
 													  "hauteur":6.0,
 													  "epaisseur":0.1,
-													  "materiau":"textureDante"}
+													  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison05",
 				"params":{"largeur":40.0, 
@@ -96,39 +116,63 @@
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison07",
-				"params":{"largeur":48.0, 
+				"params":{"largeur":40.0, 
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
-						  "materiau":"textureDante"}
+						  "materiau":"TextureWallBlanc"}
 			},
 			{"type":"cloison", "nom":"cloison08",
-				"params":{"largeur":48.0, 
+				"params":{"largeur":40.0, 
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
-						  "materiau":"textureDante"}
+						  "materiau":"TextureWallBlanc"}
 			},
 			{"type":"cloison", "nom":"cloison09",
 				"params":{"largeur":14.0, 
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
-						  "materiau":"textureDante"}
+						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison10",
 				"params":{"largeur":14.0, 
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
-						  "materiau":"textureDante"}
+						  "materiau":"textureCouloir"}
+			},
+			{"type":"cloison", "nom":"cloison11",
+				"params":{"largeur":14.0, 
+						  "hauteur":6.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloir"}
+			},
+			{"type":"cloison", "nom":"cloison12",
+				"params":{"largeur":14.0, 
+						  "hauteur":6.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloir"}
+			},
+			{"type":"cloison", "nom":"cloison13",
+				"params":{"largeur":6.0, 
+						  "hauteur":6.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloir"}
+			},
+			{"type":"cloison", "nom":"cloison14",
+				"params":{"largeur":6.0, 
+						  "hauteur":6.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloir"}
 			},
 
 			{"type":"cloison", "nom":"mur01",
-				"params":{"largeur":48.0, 
+				"params":{"largeur":40.0, 
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						  
 			},
 			{"type":"cloison", "nom":"mur02",
-				"params":{"largeur":48.0, 
+				"params":{"largeur":40.0, 
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
@@ -154,14 +198,140 @@
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 						
+			},
+			{"type":"cloison", "nom":"mur06",
+				"params":{"largeur":6.0, 
+						  "hauteur":6.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureDante"}
+						
+			},
+			{"type":"cloison", "nom":"mur07",
+				"params":{"largeur":6.0, 
+						  "hauteur":6.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureDante"}
+						
+			},
+
+			{"type":"cloison", "nom":"porte01",
+				"params":{"largeur":2.0, 
+						  "hauteur":4.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte02",
+				"params":{"largeur":2.0, 
+						  "hauteur":4.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte03",
+				"params":{"largeur":2.0, 
+						  "hauteur":4.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte04",
+				"params":{"largeur":2.0, 
+						  "hauteur":4.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte05",
+				"params":{"largeur":4.0, 
+						  "hauteur":5.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte06",
+				"params":{"largeur":4.0, 
+						  "hauteur":5.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte07",
+				"params":{"largeur":4.0, 
+						  "hauteur":5.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"porte08",
+				"params":{"largeur":4.0, 
+						  "hauteur":5.0,
+						  "epaisseur":0.1,
+						  "materiau":"texturePorteBois"}
+						
+			},
+			{"type":"cloison", "nom":"allège01",
+				"params":{"largeur":2.0, 
+						  "hauteur":2.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège02",
+				"params":{"largeur":2.0, 
+						  "hauteur":2.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège03",
+				"params":{"largeur":2.0, 
+						  "hauteur":2.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège04",
+				"params":{"largeur":2.0, 
+						  "hauteur":2.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège05",
+				"params":{"largeur":4.0, 
+						  "hauteur":1.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège06",
+				"params":{"largeur":4.0, 
+						  "hauteur":1.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège07",
+				"params":{"largeur":4.0, 
+						  "hauteur":1.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
+			},
+			{"type":"cloison", "nom":"allège08",
+				"params":{"largeur":4.0, 
+						  "hauteur":1.0,
+						  "epaisseur":0.1,
+						  "materiau":"textureCouloirAll"}
+						
 			}
 
-
+			],
 			
-
-		    ],
 	"actions" : [
 			{"fonc":"placerXYZ", "objet":"ampoule01", "params":{"x":0, "y":5.9,"z":5}}, 
+			
 			{"fonc":"orienterY", "objet":"gr01", "params":{"angle":0.785398163}},
 			{"fonc":"placerXYZ", "objet":"gr01", "params":{"x":-2, "y":-0.5,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sol", "params":{"x":0, "y":-0.01,"z":0}},
@@ -171,38 +341,83 @@
 			{"fonc":"placerXYZ", "objet":"poster01", "params":{"x":0, "y":1.7,"z":0.3}},
 			{"fonc":"placerXYZ", "objet":"poster02", "params":{"x":2.5, "y":1.7,"z":0.3}},
 			{"fonc":"placerXYZ", "objet":"texte01", "params":{"x":0, "y":5.0,"z":0.6}},
+			
 			{"fonc":"placerXYZ", "objet":"cloison01", "params":{"x":-43, "y":0.0,"z":-10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison02", "params":{"x":-43, "y":0.0,"z":10.0}},
-			{"fonc":"placerXYZ", "objet":"cloison03", "params":{"x":-20, "y":0.0,"z":10.0}},
-			{"fonc":"placerXYZ", "objet":"cloison04", "params":{"x":-20, "y":0.0,"z":-10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison03", "params":{"x":-27.0, "y":0.0,"z":10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison04", "params":{"x":-27.0, "y":0.0,"z":-10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison05", "params":{"x":-20, "y":0.0,"z":-30.0}},
 			{"fonc":"orienterY", "objet":"cloison05", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"cloison06", "params":{"x":-20, "y":0.0,"z":30.0}},
 			{"fonc":"orienterY", "objet":"cloison06", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"cloison07", "params":{"x":10, "y":0.0,"z":-26.0}},
+			{"fonc":"placerXYZ", "objet":"cloison07", "params":{"x":10, "y":0.0,"z":-30.0}},
 			{"fonc":"orienterY", "objet":"cloison07", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"cloison08", "params":{"x":10, "y":0.0,"z":26.0}},
+			{"fonc":"placerXYZ", "objet":"cloison08", "params":{"x":10, "y":0.0,"z":30.0}},
 			{"fonc":"orienterY", "objet":"cloison08", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"cloison09", "params":{"x":3, "y":0.0,"z":-10.0}},
-			{"fonc":"placerXYZ", "objet":"cloison10", "params":{"x":3, "y":0.0,"z":10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison09", "params":{"x":-13, "y":0.0,"z":10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison10", "params":{"x":-13, "y":0.0,"z":-10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison11", "params":{"x":3, "y":0.0,"z":10.0}},
+			{"fonc":"placerXYZ", "objet":"cloison12", "params":{"x":3, "y":0.0,"z":-10.0}},
+			{"fonc":"orienterY", "objet":"cloison13", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"cloison13", "params":{"x":10, "y":0.0,"z":-7.0}},
+			{"fonc":"orienterY", "objet":"cloison14", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"cloison14", "params":{"x":10, "y":0.0,"z":7.0}},
+
 			{"fonc":"orienterY", "objet":"mur01", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"mur01", "params":{"x":-50, "y":0.0,"z":-26.0}},
+			{"fonc":"placerXYZ", "objet":"mur01", "params":{"x":-50, "y":0.0,"z":-30.0}},
 			{"fonc":"orienterY", "objet":"mur02", "params":{"angle":1.5708}},
-			{"fonc":"placerXYZ", "objet":"mur02", "params":{"x":-50, "y":0.0,"z":26.0}},
+			{"fonc":"placerXYZ", "objet":"mur02", "params":{"x":-50, "y":0.0,"z":30.0}},
 			{"fonc":"orienterY", "objet":"mur03", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"mur03", "params":{"x":50, "y":0.0,"z":0.0}},
 			{"fonc":"placerXYZ", "objet":"mur04", "params":{"x":0.0, "y":0.0,"z":-50.0}},
 			{"fonc":"placerXYZ", "objet":"mur05", "params":{"x":0.0, "y":0.0,"z":50.0}},
+			{"fonc":"orienterY", "objet":"mur06", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"mur06", "params":{"x":-50, "y":0.0,"z":-7}},
+			{"fonc":"orienterY", "objet":"mur07", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"mur07", "params":{"x":-50.0, "y":0.0,"z":7}},
 			
+			{"fonc":"placerXYZ", "objet":"porte01", "params":{"x":-35.0, "y":0.0,"z":10}},
+			{"fonc":"placerXYZ", "objet":"allège01", "params":{"x":0, "y":4.0,"z":0}},
+			{"fonc":"placerXYZ", "objet":"porte02", "params":{"x":-35.0, "y":0.0,"z":-10}},
+			{"fonc":"placerXYZ", "objet":"allège02", "params":{"x":0, "y":4.0,"z":0}},
+			{"fonc":"placerXYZ", "objet":"porte03", "params":{"x":-5.0, "y":0.0,"z":10}},
+			{"fonc":"placerXYZ", "objet":"allège03", "params":{"x":0, "y":4.0,"z":0}},
+			{"fonc":"placerXYZ", "objet":"porte04", "params":{"x":-5.0, "y":0.0,"z":-10}},
+			{"fonc":"placerXYZ", "objet":"allège04", "params":{"x":0, "y":4.0,"z":0}},
+			{"fonc":"orienterY", "objet":"porte05", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"porte05", "params":{"x":-50.0, "y":0.0,"z":-2}},
+			{"fonc":"placerXYZ", "objet":"allège05", "params":{"x":0, "y":5.0,"z":0}},
+			{"fonc":"orienterY", "objet":"porte06", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"porte06", "params":{"x":-50.0, "y":0.0,"z":2}},
+			{"fonc":"placerXYZ", "objet":"allège06", "params":{"x":0, "y":5.0,"z":0}},
+			{"fonc":"orienterY", "objet":"porte07", "params":{"angle":1.5708}},
+			{"fonc":"placerXYZ", "objet":"porte07", "params":{"x":10.0, "y":0.0,"z":-2}},
+			{"fonc":"placerXYZ", "objet":"allège07", "params":{"x":0, "y":5.0,"z":0}},
+			{"fonc":"orienterY", "objet":"porte08", "params":{"angle":-1.5708}},
+			{"fonc":"placerXYZ", "objet":"porte08", "params":{"x":10.0, "y":0.0,"z":2}},
+			{"fonc":"placerXYZ", "objet":"allège08", "params":{"x":0, "y":5.0,"z":0}},
+		
+
 			{"fonc":"placerXYZ", "objet":"etage", "params":{"x":0, "y":6.0,"z":0.0}}
-		    ],
+			],
+			
 	"relations" : [
 			{"rel":"parentDe","sujet":"scene","objet":"soleil"},
 			{"rel":"parentDe","sujet":"scene","objet":"ampoule01"},
+			{"rel":"parentDe","sujet":"scene","objet":"ambient"},
 			{"rel":"parentDe","sujet":"scene","objet":"sph01"},
 			{"rel":"parentDe","sujet":"gr01","objet":"sph02"},
 			{"rel":"parentDe","sujet":"gr01","objet":"sph03"},
 			{"rel":"parentDe","sujet":"scene","objet":"gr01"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte01"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte02"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte03"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte04"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte05"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte06"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte07"},
+			{"rel":"parentDe","sujet":"scene","objet":"porte08"},
+
 			{"rel":"parentDe","sujet":"scene","objet":"sol"},
 			{"rel":"parentDe","sujet":"cloison01","objet":"texte01"},
 			{"rel":"parentDe","sujet":"scene","objet":"cloison01"},
@@ -215,11 +430,27 @@
 			{"rel":"parentDe","sujet":"scene","objet":"cloison08"},
 			{"rel":"parentDe","sujet":"scene","objet":"cloison09"},
 			{"rel":"parentDe","sujet":"scene","objet":"cloison10"},
+			{"rel":"parentDe","sujet":"scene","objet":"cloison11"},
+			{"rel":"parentDe","sujet":"scene","objet":"cloison12"},
+			{"rel":"parentDe","sujet":"scene","objet":"cloison13"},
+			{"rel":"parentDe","sujet":"scene","objet":"cloison14"},
+
+			{"rel":"parentDe","sujet":"porte01","objet":"allège01"},
+			{"rel":"parentDe","sujet":"porte02","objet":"allège02"},
+			{"rel":"parentDe","sujet":"porte03","objet":"allège03"},
+			{"rel":"parentDe","sujet":"porte04","objet":"allège04"},
+			{"rel":"parentDe","sujet":"porte05","objet":"allège05"},
+			{"rel":"parentDe","sujet":"porte06","objet":"allège06"},
+			{"rel":"parentDe","sujet":"porte07","objet":"allège07"},
+			{"rel":"parentDe","sujet":"porte08","objet":"allège08"},
+
 			{"rel":"parentDe","sujet":"scene","objet":"mur01"},
 			{"rel":"parentDe","sujet":"scene","objet":"mur02"},
 			{"rel":"parentDe","sujet":"scene","objet":"mur03"},
 			{"rel":"parentDe","sujet":"scene","objet":"mur04"},
 			{"rel":"parentDe","sujet":"scene","objet":"mur05"},
+			{"rel":"parentDe","sujet":"scene","objet":"mur06"},
+			{"rel":"parentDe","sujet":"scene","objet":"mur07"},
 			{"rel":"parentDe","sujet":"scene","objet":"etage"}
-		      ]
+		    ]
 }

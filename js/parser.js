@@ -4,7 +4,9 @@ var couleurs = {
 		"blanc":0xffffff,
 		"rouge":0xff0000,
 		"vert":0x00ff00,
-		"bleu":0x0000ff
+		"bleu":0x0000ff,
+		"jaune":0xfffee0
+
 		} ; 
 function colorier(coul){
 	return (couleurs[coul] || 0xffffff) ; 
@@ -108,12 +110,25 @@ function parser(){
 			var materiau = creerStandard(colorier(params.couleur)) ; 
 			enregistrerDansAnnuaire(nom,materiau) ; 
 		} else 
+		if(_obj.type == "basicTexture"){
+			var nx = params.nx || 1 ; 
+			var ny = params.ny || 1 ; 
+			var materiau = creerBasicTexture(params.image,colorier(params.couleur),nx, ny) ; 
+			console.log("Normal texturé : ",materiau) ; 
+			enregistrerDansAnnuaire(nom, materiau) ; 
+		} else
 		if(_obj.type == "standardTexture"){
 			var nx = params.nx || 1 ; 
 			var ny = params.ny || 1 ; 
 			var materiau = creerStandardTexture(params.image,colorier(params.couleur),nx, ny) ; 
 			console.log("Lambert texturé : ",materiau) ; 
 			enregistrerDansAnnuaire(nom, materiau) ; 
+		} else
+		if(_obj.type == "ambient"){
+			var couleur 	= colorier(params.couleur) || 0xfffee0 ;
+			var instensite 	= params.intensite || 1.0 ;
+			var ambient = creerSourceAmbient(couleur, intensite) ; 
+			enregistrerDansAnnuaire(nom, ambient) ; 	
 		} else
 		if(_obj.type == "soleil"){
 			var soleil = creerSoleil() ; 
