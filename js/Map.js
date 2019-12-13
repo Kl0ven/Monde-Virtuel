@@ -54,7 +54,9 @@ class Map {
 		for (var z = 0; z < this.iteration; z++) {
 			for (var i in children) {
 				let child = children[i];
-				let pos = this.getCellAtPos(this.getWatchingPosition(child)).to3DVect(0);
+				var i = this.getCellAtPos(this.getWatchingPosition(child))
+				if (i === null) continue
+				let pos = i.to3DVect(0);
 				let cells = this.getCircleEmptyCells(r, pos, true);
 				for (var c in cells) {
 					cells[c].setValue(v)
@@ -160,7 +162,7 @@ class Map {
 		let x =  Math.floor(pos.x / this.cellSize) + this.nbCell/2;
 		let z = Math.floor(pos.z / this.cellSize) + this.nbCell/2;
 		if (x < 0 || x > this.nbCell-1 || z < 0 || z > this.nbCell-1 ){
-			return [null];
+			return null;
 		}
 		return this.getCellAtIndex(x,z);
 	}
