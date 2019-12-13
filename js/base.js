@@ -101,6 +101,16 @@ function creerSourcePonctuelle(couleur, intensite, portee, attenuation){
 	return light ;
 }
 
+function creerSourceAmbient(couleur, intensite){
+	var light = new THREE.AmbientLight(couleur, intensite);
+	return light ;
+}
+
+function creerSpotLight(color, intensity, distance, angle, penumbra, decay){
+	var light = new THREE.SpotLight(color, intensity, distance, angle, penumbra, decay);
+	return light ;
+}
+
 function creerSoleil(){
 	var h = new THREE.HemisphereLight(0xffffff,0xffffff,1) ;
 	return h ;
@@ -188,6 +198,22 @@ function creerStandardTexture(nomImage,couleur,nx,ny){
 	return mat ;
 }
 
+function creerNormal(couleur){
+	var mat = new THREE.MeshNormalMaterial({color:couleur}) ; 
+	return mat ; 
+}
+
+function creerBasicTexture(nomImage, couleur, nx, ny){
+	var texture = textureLoader.load(nomImage) ; 
+	var mat = new THREE.MeshBasicMaterial({color:couleur,map:texture}) ; 
+	nx = nx ||   1 ; 
+	ny = ny ||   1 ; 
+	mat.map.wrapS = THREE.RepeatWrapping ;
+	mat.map.wrapT = THREE.RepeatWrapping ;
+	mat.map.repeat.set(nx,ny) ; 
+	return mat ; 
+}
+
 
 // ======================
 // Traitements des meshes
@@ -201,6 +227,10 @@ function placerXYZ(mesh,x,y,z){
 
 function orienterY(mesh,y){
 	mesh.rotateY(y) ;
+}
+
+function orienterZ(mesh,z){
+	mesh.rotateZ(z) ;
 }
 
 function parentDe(pere,fils){
