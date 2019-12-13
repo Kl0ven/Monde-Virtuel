@@ -190,7 +190,9 @@
 			{"type":"texte", "nom":"texte01",
                                            "params":{"largeur":10.0,
                                                      "hauteur":10.0,
-                                                     "texte":"BONJOUR"}},
+                                                     "texte":"BONJOUR",
+												 	"comment": "Ceci est un commentaire",
+													"properName": "Ceci est un nom "}},
 
 			{"type":"cloison", "nom":"etage",
 
