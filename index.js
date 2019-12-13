@@ -32,7 +32,7 @@ var raycaster = new Raycaster();
 var displaymanager;
 var map;
 
-const debugMap = true;
+const debugMap = false;
 const debugPointerLockSpeed = false;
 const debugRayCast = false;
 
@@ -76,6 +76,7 @@ function init(){
 
 	chrono.start();
 	// window.setInterval(updateCloseByObject,1000);
+
 };
 
 function enregistrerDansAnnuaire(nom,objet){

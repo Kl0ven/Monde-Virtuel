@@ -3,8 +3,9 @@
 
 
 			{"type":"soleil" , "nom":"soleil"    , "params":{}},
+			{"type":"ambient" , "nom":"ambient"    , "params":{}},
 			{"type":"ampoule", "nom":"ampoule01" , "params":{"couleur":"blanc","intensite":5.0,"portee":6.0,"attenuation":1.0}},
-			
+
 			{"type":"standard", "nom":"materiauBleu","params":{"couleur":"bleu"}},
 			{"type":"standard", "nom":"materiauBlanc","params":{"couleur":"blanc"}},
 			{"type":"standard", "nom":"wfRouge","params":{"couleur":"rouge"}},
@@ -59,8 +60,8 @@
 				"params":{"image":"assets/murs/sable.jpg",
 				"couleur":"blanc","nx":3,"ny":1}
 			},
-			
-							
+
+
 
 
 			{"type":"groupe",  "nom":"gr01","params":{}},
@@ -74,113 +75,113 @@
                                            "params":{"largeur":100.0,"profondeur":100.0,"materiau":"textureSol"}},
 
 			{"type":"poster", "nom":"poster01",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/trevarez/cuisine.jpg"}},
 			{"type":"poster", "nom":"poster02",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/trevarez/coffre-charbon.jpg"}},
 			{"type":"poster", "nom":"poster03",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/trevarez/frien.jpg"}},
 			{"type":"poster", "nom":"poster04",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/trevarez/baumgardner.jpg"}},
 			{"type":"poster", "nom":"poster11",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/Japonais/Tsunami.jpg"}},
 			{"type":"poster", "nom":"poster12",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/Japonais/blossom.jpg"}
 			},
 			{"type":"poster", "nom":"poster13",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/Japonais/cerisier.jpg"}
 			},
 			{"type":"poster", "nom":"poster14",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/Japonais/index.jpg"}
 			},
 			{"type":"poster", "nom":"poster21",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/Revfra/Liberte.jpg"}},
 			{"type":"poster", "nom":"poster22",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/Revfra/RadeauMéduse.jpg"}
 			},
 			{"type":"poster", "nom":"poster23",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/Revfra/Serment_du_Jeu_de_Paume.jpg"}
 			},
 			{"type":"poster", "nom":"poster24",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/Revfra/vhj.jpg"}
 			},
 			{"type":"poster", "nom":"poster31",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/italiens/Achille.jpg"}},
 			{"type":"poster", "nom":"poster32",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/italiens/Assassinat.jpg"}
 			},
 			{"type":"poster", "nom":"poster33",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/italiens/Mona_Lisa.jpg"}
 			},
 			{"type":"poster", "nom":"poster34",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/italiens/Venus.jpg"}
 			},
 			{"type":"poster", "nom":"poster41",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
                                                      "url":"assets/posters/afrique/soleil.jpg"}},
 			{"type":"poster", "nom":"poster42",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/afrique/afr001.jpg"}
 			},
 			{"type":"poster", "nom":"poster43",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/afrique/abstrait.jpg"}
 			},
 			{"type":"poster", "nom":"poster44",
-                                           "params":{"largeur":2.0, 
+                                           "params":{"largeur":2.0,
                                                      "hauteur":2.0,
                                                      "epaisseur":0.5,
 													 "url":"assets/posters/afrique/Passions.jpg"}
@@ -199,381 +200,381 @@
 						     "nl":10, "ne":10, "nh":10,
 													 "materiau":"texturePlafond"}},
 			{"type":"cloison", "nom":"cloison01",
-											"params":{"largeur":14.0, 
+											"params":{"largeur":14.0,
 													  "hauteur":6.0,
 										              "epaisseur":0.1,
 													  "materiau":"textureCouloir"}},
 			{"type":"cloison", "nom":"cloison02",
-											"params":{"largeur":14.0, 
+											"params":{"largeur":14.0,
 													  "hauteur":6.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureCouloir"}},
 			{"type":"cloison", "nom":"cloison03",
-											"params":{"largeur":14.0, 
+											"params":{"largeur":14.0,
 													  "hauteur":6.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureCouloir"}},
 			{"type":"cloison", "nom":"cloison04",
-											"params":{"largeur":14.0, 
+											"params":{"largeur":14.0,
 													  "hauteur":6.0,
 													  "epaisseur":0.1,
 													  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison05",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison06",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison07",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureItal"}
 			},
 			{"type":"cloison", "nom":"cloison08",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureSable"}
 			},
 			{"type":"cloison", "nom":"cloison09",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison10",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison11",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison12",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison13",
-				"params":{"largeur":6.0, 
+				"params":{"largeur":6.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison14",
-				"params":{"largeur":6.0, 
+				"params":{"largeur":6.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloir"}
 			},
 			{"type":"cloison", "nom":"cloison21",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison22",
-				"params":{"largeur":30.0, 
+				"params":{"largeur":30.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison23",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison24",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureBrique"}
 			},
 			{"type":"cloison", "nom":"cloison25",
-				"params":{"largeur":30.0, 
+				"params":{"largeur":30.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureItal"}
 			},
 			{"type":"cloison", "nom":"cloison26",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureItal"}
 			},
 			{"type":"cloison", "nom":"cloison27",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureItal"}
 			},
 			{"type":"cloison", "nom":"cloison28",
-				"params":{"largeur":46.0, 
+				"params":{"largeur":46.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureFra"}
 			},
 			{"type":"cloison", "nom":"cloison29",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureItal"}
 			},
 			{"type":"cloison", "nom":"cloison31",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison32",
-				"params":{"largeur":30.0, 
+				"params":{"largeur":30.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison33",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison34",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureJapan"}
 			},
 			{"type":"cloison", "nom":"cloison35",
-				"params":{"largeur":30.0, 
+				"params":{"largeur":30.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureSable"}
 			},
 			{"type":"cloison", "nom":"cloison36",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureSable"}
 			},
 			{"type":"cloison", "nom":"cloison37",
-				"params":{"largeur":14.0, 
+				"params":{"largeur":14.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureSable"}
 			},
 			{"type":"cloison", "nom":"cloison38",
-				"params":{"largeur":46.0, 
+				"params":{"largeur":46.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureFra"}
 			},
 			{"type":"cloison", "nom":"cloison39",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureSable"}
 			},
 			{"type":"cloison", "nom":"cloison40",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureFra"}
 			},
 			{"type":"cloison", "nom":"cloison41",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureFra"}
 			},
 			{"type":"cloison", "nom":"cloison42",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureFra"}
 			},
 
 			{"type":"cloison", "nom":"mur01",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 
 			},
 			{"type":"cloison", "nom":"mur02",
-				"params":{"largeur":40.0, 
+				"params":{"largeur":40.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 
 			},
 			{"type":"cloison", "nom":"mur03",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 
 			},
 			{"type":"cloison", "nom":"mur04",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
 
 			},
 			{"type":"cloison", "nom":"mur05",
-				"params":{"largeur":100.0, 
+				"params":{"largeur":100.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						
+
 			},
 			{"type":"cloison", "nom":"mur06",
-				"params":{"largeur":6.0, 
+				"params":{"largeur":6.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						
+
 			},
 			{"type":"cloison", "nom":"mur07",
-				"params":{"largeur":6.0, 
+				"params":{"largeur":6.0,
 						  "hauteur":6.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureDante"}
-						
+
 			},
 
 			{"type":"cloison", "nom":"porte01",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte02",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte03",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte04",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":4.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte05",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":5.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte06",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":5.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte07",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":5.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"porte08",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":5.0,
 						  "epaisseur":0.1,
 						  "materiau":"texturePorteBois"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège01",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":2.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège02",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":2.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège03",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":2.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège04",
-				"params":{"largeur":2.0, 
+				"params":{"largeur":2.0,
 						  "hauteur":2.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège05",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":1.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège06",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":1.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège07",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":1.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			},
 			{"type":"cloison", "nom":"allège08",
-				"params":{"largeur":4.0, 
+				"params":{"largeur":4.0,
 						  "hauteur":1.0,
 						  "epaisseur":0.1,
 						  "materiau":"textureCouloirAll"}
-						
+
 			}
 
 			],
-			
+
 	"actions" : [
-			{"fonc":"placerXYZ", "objet":"ampoule01", "params":{"x":0, "y":5.9,"z":5}}, 
-			
+			{"fonc":"placerXYZ", "objet":"ampoule01", "params":{"x":0, "y":5.9,"z":5}},
+
 			{"fonc":"orienterY", "objet":"gr01", "params":{"angle":0.785398163}},
 			{"fonc":"placerXYZ", "objet":"gr01", "params":{"x":-2, "y":-0.5,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sol", "params":{"x":0, "y":-0.01,"z":0}},
@@ -583,7 +584,7 @@
 			{"fonc":"placerXYZ", "objet":"poster01", "params":{"x":0, "y":1.7,"z":0.3}},
 			{"fonc":"placerXYZ", "objet":"poster02", "params":{"x":2.5, "y":1.7,"z":0.3}},
 			{"fonc":"placerXYZ", "objet":"texte01", "params":{"x":0, "y":5.0,"z":0.6}},
-			
+
 			{"fonc":"placerXYZ", "objet":"cloison01", "params":{"x":-43, "y":0.0,"z":-10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison02", "params":{"x":-43, "y":0.0,"z":10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison03", "params":{"x":-27.0, "y":0.0,"z":10.0}},
@@ -646,7 +647,7 @@
 			{"fonc":"placerXYZ", "objet":"mur06", "params":{"x":-50, "y":0.0,"z":-7}},
 			{"fonc":"orienterY", "objet":"mur07", "params":{"angle":1.5708}},
 			{"fonc":"placerXYZ", "objet":"mur07", "params":{"x":-50.0, "y":0.0,"z":7}},
-			
+
 			{"fonc":"placerXYZ", "objet":"porte01", "params":{"x":-35.0, "y":0.0,"z":10}},
 			{"fonc":"placerXYZ", "objet":"allège01", "params":{"x":0, "y":4.0,"z":0}},
 			{"fonc":"placerXYZ", "objet":"porte02", "params":{"x":-35.0, "y":0.0,"z":-10}},
@@ -667,11 +668,11 @@
 			{"fonc":"orienterY", "objet":"porte08", "params":{"angle":-1.5708}},
 			{"fonc":"placerXYZ", "objet":"porte08", "params":{"x":10.0, "y":0.0,"z":2}},
 			{"fonc":"placerXYZ", "objet":"allège08", "params":{"x":0, "y":5.0,"z":0}},
-		
+
 
 			{"fonc":"placerXYZ", "objet":"etage", "params":{"x":0, "y":6.0,"z":0.0}}
 			],
-			
+
 	"relations" : [
 			{"rel":"parentDe","sujet":"scene","objet":"soleil"},
 			{"rel":"parentDe","sujet":"scene","objet":"ampoule01"},
