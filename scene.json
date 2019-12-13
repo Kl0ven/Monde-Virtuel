@@ -75,9 +75,11 @@
                                            "params":{"largeur":100.0,"profondeur":100.0,"materiau":"textureSol"}},
 
 			{"type":"poster", "nom":"poster01",
-                                           "params":{"largeur":2.0,
-                                                     "hauteur":2.0,
-                                                     "epaisseur":0.5,
+                                           "params":{"largeur":3.0,
+                                                     "hauteur":3.0,
+													 "epaisseur":0.5,
+													 "texte":"Photo de Cuisine",
+													 "comment":"Cette photo represente une cuisine datant du 20ème siècle",
                                                      "url":"assets/posters/trevarez/cuisine.jpg"}},
 			{"type":"poster", "nom":"poster02",
                                            "params":{"largeur":2.0,
@@ -583,9 +585,11 @@
 			{"fonc":"placerXYZ", "objet":"sph01", "params":{"x":20, "y":2,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sph02", "params":{"x":-20,"y":2,"z":3}},
 			{"fonc":"placerXYZ", "objet":"sph03", "params":{"x":0, "y":2,"z":3}},
-			{"fonc":"placerXYZ", "objet":"poster01", "params":{"x":0, "y":1.7,"z":0.3}},
-			{"fonc":"placerXYZ", "objet":"poster02", "params":{"x":2.5, "y":1.7,"z":0.3}},
-			{"fonc":"placerXYZ", "objet":"texte01", "params":{"x":0, "y":5.0,"z":0.6}},
+			{"fonc":"placerXYZ", "objet":"poster01", "params":{"x":0.1, "y":3,"z":0.1}},
+			{"fonc":"placerXYZ", "objet":"poster02", "params":{"x":0.1, "y":3,"z":-10}},
+			{"fonc":"placerXYZ", "objet":"poster03", "params":{"x":0.1, "y":3,"z":10}},
+			{"fonc":"placerXYZ", "objet":"poster04", "params":{"x":0.1, "y":3,"z":0}},
+			{"fonc":"placerXYZ", "objet":"texte01", "params":{"x":0.1, "y":5.0,"z":0.1}},
 
 			{"fonc":"placerXYZ", "objet":"cloison01", "params":{"x":-43, "y":0.0,"z":-10.0}},
 			{"fonc":"placerXYZ", "objet":"cloison02", "params":{"x":-43, "y":0.0,"z":10.0}},
@@ -683,6 +687,7 @@
 			{"rel":"parentDe","sujet":"gr01","objet":"sph02"},
 			{"rel":"parentDe","sujet":"gr01","objet":"sph03"},
 			{"rel":"parentDe","sujet":"scene","objet":"gr01"},
+			
 			{"rel":"parentDe","sujet":"scene","objet":"porte01"},
 			{"rel":"parentDe","sujet":"scene","objet":"porte02"},
 			{"rel":"parentDe","sujet":"scene","objet":"porte03"},
@@ -730,6 +735,10 @@
 			{"rel":"parentDe","sujet":"scene","objet":"cloison41"},
 			{"rel":"parentDe","sujet":"scene","objet":"cloison42"},
 
+			{"rel":"parentDe","sujet":"cloison21","objet":"poster01"},
+			{"rel":"parentDe","sujet":"cloison22","objet":"poster02"},
+			{"rel":"parentDe","sujet":"cloison22","objet":"poster03"},
+			{"rel":"parentDe","sujet":"cloison05","objet":"poster04"},
 
 			{"rel":"parentDe","sujet":"porte01","objet":"allège01"},
 			{"rel":"parentDe","sujet":"porte02","objet":"allège02"},
